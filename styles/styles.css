@@ -1,14 +1,100 @@
 /* styles/styles.css */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
+    color: #150f0f;
+    line-height: 1.6;
 }
 
-h1 {
-    color: #333;
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between flex items */
+}
+
+.flex-item {
+    flex: 1; /* Each item takes up an equal amount of space */
+    min-width: 300px; /* Prevent items from becoming too small */
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    background-color: #333550;
+    color: white;
+    padding: 40px 0;
     text-align: center;
-    margin-top: 20vh;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+main {
+    padding: 20px 0;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-align: center; /* Center align section headers */
+}
+
+section ul, section ol {
+    margin-top: 0;
+}
+
+section table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+section table th, section table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+section table th {
+    background-color: #ffffff;
+}
+
+section table a {
+    color: #f8a4a4;
+    text-decoration: none;
+}
+
+section table a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #333550;
+    color: white;
 }

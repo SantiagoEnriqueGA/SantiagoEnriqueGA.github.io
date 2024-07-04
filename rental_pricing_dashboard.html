@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Pricing Dashboard Project - Santiago E. González Angarita</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        /* Styling for boxed sections */
+        .box {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 75%; /* Limiting width to 75% of the screen */
+            max-width: 100%; /* Ensuring it's responsive */
+            margin-left: auto; /* Centering the box horizontally */
+            margin-right: auto;
+        }
+        .box h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #000; /* Black border bottom */
+            padding-bottom: 10px; /* Padding for spacing */
+        }
+        .box ul, .box ol {
+            margin-bottom: 0;
+        }
+        .box img {
+            max-width: 100%;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto; /* Centering the image */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rental Pricing Dashboard Project</h1>
+        <p>Apartment Classifieds Prediction and Visualization</p>
+    </header>
+
+    <main>
+        <section class="box" id="overview">
+            <h2>Overview/Goal</h2>
+            <p>This project focuses on predicting apartment prices and visualizing data related to apartment listings. It combines various datasets to create predictive models and interactive visualizations using geographic and demographic information. Many models were tested including a using custom random forest implementation, XGBoost, as well as H2O autoML. The final dashboard is built in javascript using D3.</p>
+        </section>
+
+        <section class="box" id="data-sources">
+            <h2>Data Sources</h2>
+            <ul>
+                <li>Apt Listing Data: UCI Apartment Listing Dataset</li>
+                <li>GIS Zip Data: ArcGIS Zip Data</li>
+                <li>IRS Zip Data: IRS Individual Income Tax Statistics</li>
+                <li>USA GeoJSON Data: US GeoJSON Data</li>
+                <li>US States GeoJSON Data: State-zip-code-GeoJSON</li>
+            </ul>
+        </section>
+
+        <section class="box" id="key-files">
+            <h2>Key Files</h2>
+            <ul>
+                <li><code>dataJoining.py</code>: Joins all three datasets together, generates zip codes based on apartment latitude/longitude, and joins apartment data with IRS data based on zip codes.</li>
+                <li><code>dataFeatureEng.py</code>: Cleans data and creates dummy variables such as length of description, Cats_Allowed and Dogs_Allowed flags, amenities dummy variables, city names (grouping cities with less than 50 records as 'Other'), and drops rows with null values for specific columns. The resulting dataset size is (87063, 56).</li>
+                <li><code>modelCreation.ipynb</code>: Creates predictive models including linear regression and XGBoost models. The predicted prices are saved back to the dataset.</li>
+                <li><code>aptVis.html</code>: A proof-of-concept interactive visualization tool using D3.js. It draws all states and zip codes using GeoJSON data, displays predicted apartment data points with latitude/longitude converted to projection, and allows user input to predict apartment prices based on various features such as zip code, bedrooms, bathrooms, square footage, parking, and pets.</li>
+            </ul>
+        </section>
+
+        <section class="box" id="how-to-use">
+            <h2>How to Use</h2>
+            <ol>
+                <li>Clone the repository and set up the required dependencies.</li>
+                <li>Run <code>dataJoining.py</code> to combine the datasets and generate zip codes.</li>
+                <li>Execute <code>dataFeatureEng.py</code> to clean the data and create dummy variables.</li>
+                <li>Open and run <code>modelCreation.ipynb</code> to build predictive models and save predicted prices.</li>
+                <li>Launch <code>aptVis.html</code> in a web browser to interact with the visualization tool. Enter the necessary inputs to predict apartment prices based on selected criteria.</li>
+            </ol>
+        </section>
+
+        <section class="box" id="screenshot">
+            <h2>Screenshot</h2>
+            <img src="images/rental_pricing.png" alt="Rental Pricing Dashboard Screenshot">
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Santiago E. González Angarita. All rights reserved.</p>
+    </footer>
+</body>
+</html>

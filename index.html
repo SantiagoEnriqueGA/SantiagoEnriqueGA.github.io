@@ -3,11 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Santiago E. González Angarita - Personal Website</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Hello world</h1>
+    <header>
+        <div class="container">
+            <h1>Santiago E. González Angarita</h1>
+            <p>Welcome to my website!</p>
+            <p>Here you can find a sample of some of the projects I've been working on personally. I am currently based in Texas and am a Senior Member of Technical Staff at AT&T, and also studying Computational Data Analytics at the Georgia Institute of Technology. I enjoy blending my deep experience in data analytics, machine learning, and software engineering to transform data into actionable insights and innovative solutions.</p>
+            <p>PS: website is under construction, this is not my forte!</p>
+        </div>
+    </header>
+
+    <main>
+        <div class="container flex-container">
+            <section id="highlights" class="flex-item">
+                <h2>Professional Highlights</h2>
+                <ul>
+                    <li><strong>Senior Member of Technical Staff</strong> - AT&T, Dallas, Texas (Present)</li>
+                    <li><strong>Broadband Advanced Analyst</strong> - AT&T, Dallas, Texas</li>
+                    <li><strong>Metrics Reporting Analyst</strong> - AT&T, Dallas, Texas</li>
+                    <li><strong>Data Implementation Analyst</strong> - IHS Markit, Dallas, Texas</li>
+                    <li><strong>Software Developer - ServiceNow</strong> - Sabre Corporation, Southlake, Texas</li>
+                </ul>
+            </section>
+
+            <section id="toolbox" class="flex-item">
+                <h2>Toolbox</h2>
+                <p><strong>Languages:</strong> Python, R, SQL, C, JavaScript</p>
+                <p><strong>Libraries:</strong> Pandas, NumPy, Scikit-learn, PyTorch, PySpark</p>
+                <p><strong>Analytical Tools:</strong> Power BI, Tableau, Palantir</p>
+                <p><strong>Certifications:</strong> Advanced Data Science IBM Specialization, Advanced Machine Learning and Signal Processing, Applied AI with DeepLearning, Fundamentals of Scalable Data Science</p>
+            </section>
+
+            <section id="education" class="flex-item">
+                <h2>Education</h2>
+                <p><strong>Master of Science in Analytics</strong> (Computational Data Analytics Track) - Georgia Institute of Technology</p>
+                <p><strong>Bachelor of Science in Information Technology and Systems</strong> - The University of Texas at Dallas</p>
+            </section>
+        </div>
+
+        <section id="projects" class="container">
+            <h2>Projects University/Personal</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Project</th>
+                        <th>Description</th>
+                        <th>Tools</th>
+                        <th>Link</th>
+                        <th>Repo Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Rental Pricing Dashboard</td>
+                        <td>XGBoost model for predicting apartment rental prices. Data collection, aggregation, and model fine-tuning for optimal accuracy and robustness.</td>
+                        <td>Python, XGBoost, Scikit-learn</td>
+                        <td><a href="rental_pricing_dashboard.html">Click Me!</a></td>
+                        <td><a href="https://github.com/SantiagoEnriqueGA/d3_apartment_rent_prediction_vis" target="_blank">Repo Link</a></td>
+                    </tr>
+                    <tr>
+                        <td>Conway's Game of Life</td>
+                        <td>Conway's Game of Life using Pygame for graphics and Numpy for array operations. Optimized drawing, pause/resume functionality, and more.</td>
+                        <td>Python, Pygame, Numpy</td>
+                        <td><a href="conways_game_of_life.html">Click Me!</a></td>
+                        <td><a href="https://github.com/SantiagoEnriqueGA/gameOfLife" target="_blank">Repo Link</a></td>
+                    </tr>
+                    <tr>
+                        <td>Semantic Artist Similarity Analysis</td>
+                        <td>Analyzed artist similarity, building and analyzing artist similarity networks using NetworkX and visualization with Plotly.</td>
+                        <td>Python, NetworkX, Plotly, D3.js</td>
+                        <td><a href="semantic_artist_similarity.html">Click Me!</a></td>
+                        <td><a href="https://github.com/SantiagoEnriqueGA/artist_similarity_network" target="_blank">Repo Link</a></td>
+                    </tr>
+                    <tr>
+                        <td>Used Car Data Scraping and Analysis</td>
+                        <td>Automatically scraping data from Cars.com using BeautifulSoup. Pipeline to scrape data on several vehicle models, clean, and analyze the data.</td>
+                        <td>Python, BeautifulSoup</td>
+                        <td><a href="used_car_data_scraping.html">Click Me!</a></td>
+                        <td><a href="https://github.com/SantiagoEnriqueGA/used_car_price_visualization" target="_blank">Repo Link</a></td>
+                    </tr>
+                    <tr>
+                        <td>Custom Clustering</td>
+                        <td>Custom classes for KMeans and DBSCAN from scratch, allowing for multiple clustering evaluation measures.</td>
+                        <td>Python, Numpy</td>
+                        <td><a href="custom_clustering.html">Click Me!</a></td>
+                        <td><a href="https://github.com/SantiagoEnriqueGA/custom_clustering" target="_blank">Repo Link</a></td>
+                    </tr>
+                    <tr>
+                        <td>Custom Ensemble Learning</td>
+                        <td>Custom classes for creating random forest classifiers and regressors, and for gradient boosted decision tree classifiers and regressors.</td>
+                        <td>Python, Numpy</td>
+                        <td><a href="custom_ensemble_learning.html">Click Me!</a></td>
+                        <td><a href="https://github.com/SantiagoEnriqueGA/custom_ensemble_learning" target="_blank">Repo Link</a></td>
+                    </tr>
+                    <tr>
+                        <td>Neural Network Drought Prediction</td>
+                        <td>Neural network model for multiclass classification to predict drought levels using meteorological data. Data preprocessing, model building, hyperparameter tuning, and evaluation.</td>
+                        <td>Python, PyTorch, SMOTE, PCA</td>
+                        <td><a href="neural_network_drought_prediction.html">Click Me!</a></td>
+                        <td><a href="https://github.com/SantiagoEnriqueGA/drought_prediction_pytorch" target="_blank">Repo Link</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="leadership" class="container">
+            <h2>Leadership and Organizations</h2>
+            <ul>
+                <li>Dallas CASA (Court Appointed Special Advocates) (2021 - Current)</li>
+                <li>Co-Recruitment Chair, Delta Tau Delta Fraternity, UT Dallas (2016 - 2020)</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>&copy; 2024 Santiago E. González Angarita</p>
+    </footer>
+
     <script src="scripts/main.js"></script>
 </body>
 </html>

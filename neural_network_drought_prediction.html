@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Network Drought Prediction Project - Santiago E. González Angarita</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- Include Prism.js and Prism.css -->
+    <link rel="stylesheet" href="prism/prism.css">
+    <script src="prism/prism.js" defer></script>
+    <style>
+        /* Styling for boxed sections */
+        .box {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            width: 75%; /* Limiting width to 75% of the screen */
+            max-width: 100%; /* Ensuring it's responsive */
+            margin-left: auto; /* Centering the box horizontally */
+            margin-right: auto;
+        }
+        .box h2 {
+            margin-top: 0;
+            border-bottom: 1px solid #000; /* Black border bottom */
+            padding-bottom: 10px; /* Padding for spacing */
+        }
+        .box ul, .box ol {
+            margin-bottom: 0;
+        }
+        .box img {
+            max-width: 100%;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto; /* Centering the image */
+        }
+        .code-sample {
+            margin-top: 20px;
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            overflow-x: auto; /* Enable horizontal scrolling */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Neural Network Drought Prediction Project</h1>
+        <p>Drought Prediction using Neural Network</p>
+    </header>
+
+    <main>
+        <section class="box" id="overview">
+            <h2>Overview/Goal</h2>
+            <p>This project aims to gain experience in tuning a neural network for multiclass classification, specifically for predicting drought levels using meteorological data.</p>
+        </section>
+
+        <section class="box" id="project-structure">
+            <h2>Project Structure</h2>
+            <ul>
+                <li><code>droughtPrediction_EDA.ipynb</code>: Basic Exploratory Data Analysis (EDA).</li>
+                <li><code>droughtPrediction_DataEng.ipynb</code>: Combines time series and soil data, removes outliers, splits data into training and testing sets, standardizes features, upsamples using SMOTE, and performs PCA.</li>
+                <li><code>droughtPrediction_PyTorch_HP.ipynb</code>: Builds the PyTorch framework, searches for hyperparameters, trains, and saves the final model.</li>
+                <li><code>droughtPrediction_PyTorch_Final.ipynb</code>: Shows and evaluates the final model and demonstrates a data pipeline for predicting on the original data format.</li>
+            </ul>
+        </section>
+
+        <section class="box" id="model-architecture">
+            <h2>Model Architecture</h2>
+            <p>The final neural network model, <code>DroughtClassifier</code>, is structured as follows:</p>
+            <pre><code>
+DroughtClassifier(
+  (layers): ModuleList(
+    (0): Linear(in_features=52, out_features=1024, bias=True)
+    (1): Linear(in_features=1024, out_features=512, bias=True)
+    (2): Linear(in_features=512, out_features=256, bias=True)
+    (3): Linear(in_features=256, out_features=128, bias=True)
+    (4): Linear(in_features=128, out_features=6, bias=True)
+  )
+  (dropout): Dropout(p=0.2, inplace=False)
+)
+Activation Function: ReLU
+            </code></pre>
+        </section>
+
+        <section class="box" id="final-hyperparameters">
+            <h2>Final Hyperparameters</h2>
+            <ul>
+                <li>Scheduler: StepLR</li>
+                <li>step_size: 10</li>
+                <li>gamma: 0.5</li>
+                <li>Dropout Probability: 0.2</li>
+                <li>Hidden Layer Sizes: (1024, 512, 256, 128)</li>
+                <li>Learning Rate: 0.001</li>
+            </ul>
+        </section>
+
+        <section class="box" id="model-performance">
+            <h2>Model Performance</h2>
+            <p>Metrics on the test dataset:</p>
+            <ul>
+                <li>Test Loss: 0.6352</li>
+                <li>Accuracy: 0.7337</li>
+                <li>Macro F1 Mean: 0.6895</li>
+                <li>MAE Mean: 0.3255</li>
+            </ul>
+        </section>
+
+        <section class="box" id="dataset">
+            <h2>Dataset</h2>
+            <p>The data used for this project comes from Kaggle: US Drought Meteorological Data.</p>
+        </section>
+
+        <section class="box" id="about-dataset">
+            <h2>About the Dataset</h2>
+            <p>The US drought monitor measures drought across the US, created manually by experts using a wide range of data. The dataset aims to investigate if droughts can be predicted using only meteorological data, potentially allowing generalization of US predictions to other areas of the world.</p>
+            <p>Content:</p>
+            <p>The dataset is a classification dataset over six levels of drought, which are:</p>
+            <ol>
+                <li>No drought</li>
+                <li>Five drought levels</li>
+            </ol>
+            <p>Each entry is a drought level at a specific point in time in a specific US county, accompanied by the last 90 days of 18 meteorological indicators.</p>
+        </section>
+
+        <section class="box" id="data-splits">
+            <h2>Data Splits</h2>
+            <p>To avoid data leakage, the data has been split as follows:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Split</th>
+                        <th>Year Range (inclusive)</th>
+                        <th>Percentage (approximate)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Train</td>
+                        <td>2000-2009</td>
+                        <td>47%</td>
+                    </tr>
+                    <tr>
+                        <td>Validation</td>
+                        <td>2010-2011</td>
+                        <td>10%</td>
+                    </tr>
+                    <tr>
+                        <td>Test</td>
+                        <td>2012-2020</td>
+                        <td>43%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="box" id="dataset-imbalance">
+            <h2>Dataset Imbalance</h2>
+            <p>The dataset is imbalanced, which can be observed in the provided graph.</p>
+            <img src="images/dataset_imbalance.png" alt="Dataset Imbalance Graph">
+        </section>
+
+        <section class="box" id="conclusion">
+            <h2>Conclusion</h2>
+            <p>This project demonstrates the process of tuning a neural network for multiclass classification on a real-world dataset. The steps include data preprocessing, model building, hyperparameter tuning, and evaluation. The final model achieves great results on the test dataset:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Test Loss</td>
+                        <td>0.6352</td>
+                    </tr>
+                    <tr>
+                        <td>Accuracy</td>
+                        <td>0.7337</td>
+                    </tr>
+                    <tr>
+                        <td>Macro F1 Mean</td>
+                        <td>0.6895</td>
+                    </tr>
+                    <tr>
+                        <td>MAE Mean</td>
+                        <td>0.3255</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="box" id="code-sample">
+            <h2>Code Samples</h2>
+            <pre><code class="language-python">
+# Example Python code snippet
+Add this code to the site under: Code Sample
+
+class DroughtClassifier(nn.Module):
+    """
+    A neural network classifier for drought prediction.
+
+    Args:
+        input_size (int): The number of input features.
+        hidden_sizes (list of int): A list containing the sizes of the hidden layers.
+        output_size (int): The number of output classes.
+        dropout_prob (float, optional): The probability of an element to be zeroed in dropout. Default is 0.5.
+
+    Attributes:
+        layers (nn.ModuleList): A list of linear layers.
+        dropout (nn.Dropout): Dropout layer for regularization.
+    """
+    def __init__(self, input_size, hidden_sizes, output_size, dropout_prob=0.5):
+        super(DroughtClassifier, self).__init__()
+        self.layers = nn.ModuleList()
+        
+        # Input layer
+        self.layers.append(nn.Linear(input_size, hidden_sizes[0]))
+        
+        # Hidden layers
+        for i in range(len(hidden_sizes) - 1):
+            self.layers.append(nn.Linear(hidden_sizes[i], hidden_sizes[i+1]))
+        
+        # Output layer
+        self.layers.append(nn.Linear(hidden_sizes[-1], output_size))
+        
+        # Dropout layer
+        self.dropout = nn.Dropout(dropout_prob)
+
+    def forward(self, x):
+        """
+        Defines the forward pass of the neural network.
+
+        Args:
+            x (torch.Tensor): The input tensor.
+
+        Returns:
+            torch.Tensor: The output tensor after passing through the network.
+        """
+        # Apply each layer followed by ReLU activation and dropout, except the last layer
+        for layer in self.layers[:-1]:
+            x = self.dropout(F.relu(layer(x)))
+        # Apply the last layer without activation or dropout
+        x = self.layers[-1](x)
+        return x
+		
+class EarlyStopping:
+    """
+    Early stopping to stop the training when the loss does not improve after a given patience.
+
+    Args:
+        patience (int, optional): How long to wait after last time validation loss improved. Default is 5.
+        delta (float, optional): Minimum change in the monitored quantity to qualify as an improvement. Default is 0.
+
+    Attributes:
+        patience (int): How long to wait after last time validation loss improved.
+        delta (float): Minimum change in the monitored quantity to qualify as an improvement.
+        best_loss (float): Best recorded validation loss.
+        counter (int): Counter for how many epochs have passed since the last improvement.
+        early_stop (bool): Whether early stopping is triggered.
+    """
+    def __init__(self, patience=5, delta=0):
+        self.patience = patience
+        self.delta = delta
+        self.best_loss = float('inf')
+        self.counter = 0
+        self.early_stop = False
+
+    def __call__(self, val_loss):
+        """
+        Checks if the validation loss has improved and updates the counter and early stop flag accordingly.
+
+        Args:
+            val_loss (float): The current validation loss.
+
+        Returns:
+            None
+        """
+        if val_loss < self.best_loss - self.delta:
+            # If the validation loss has improved (by more than delta), reset the counter
+            self.best_loss = val_loss
+            self.counter = 0
+        else:
+            # If the validation loss has not improved, increment the counter
+            self.counter += 1
+            if self.counter >= self.patience:
+                # If the counter exceeds the patience, set the early stop flag
+                self.early_stop = True
+
+# Define a function to get a unique log directory
+def get_log_dir(base_dir='runs', name=None):
+    """
+    Generates a unique log directory path based on the current date and time, optionally appending a name.
+
+    Args:
+        base_dir (str, optional): The base directory where logs will be saved. Default is 'runs'.
+        name (str, optional): An optional name to append before the date in the log directory.
+
+    Returns:
+        str: A unique directory path for saving logs.
+    """
+    # Get the current date and time as a formatted string
+    current_time = datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')
+    # Create a log directory path by combining the base directory, name (if provided), and the current time
+    if name:
+        log_dir = os.path.join(base_dir, f"{name}_{current_time}")
+    else:
+        log_dir = os.path.join(base_dir, current_time)
+    return log_dir
+	
+def evaluate_writer(model, test_loader, criterion, writer=None, epoch=None):
+    """
+    Evaluates the model on the test dataset and prints the test loss, accuracy, and F1 scores.
+
+    Args:
+        model (nn.Module): The trained neural network model to be evaluated.
+        test_loader (DataLoader): DataLoader for the test dataset.
+        criterion (nn.Module): The loss function.
+        writer (SummaryWriter, optional): TensorBoard SummaryWriter to log metrics. Default is None.
+        epoch (int, optional): Current epoch number. Default is None.
+
+    Returns:
+        None
+    """
+    model.eval() # Set model to evaluation mode
+    running_loss = 0.0
+    correct_predictions = 0
+    y_true = []
+    y_pred = []
+    
+    with torch.no_grad():                                           # Disable gradient computation
+        for inputs, labels in test_loader:
+            inputs, labels = inputs.to(device), labels.to(device)   # Move inputs and labels to GPU
+
+            outputs = model(inputs)             # Forward pass
+            loss = criterion(outputs, labels)   # Compute loss
+
+            running_loss += loss.item() * inputs.size(0)    # Accumulate loss
+            
+            _, preds = torch.max(outputs, 1)                            # Get predictions
+            correct_predictions += torch.sum(preds == labels).item()    # Count correct predictions
+
+            # Append true and predicted labels for F1 score calculation
+            y_true.extend(labels.cpu().numpy())
+            y_pred.extend(preds.cpu().numpy())
+    
+    test_loss = running_loss / len(test_loader.dataset)         # Calculate average test loss
+    accuracy = correct_predictions / len(test_loader.dataset)   # Calculate test accuracy
+    
+    # Compute F1 scores
+    micro_f1 = f1_score(y_true, y_pred, average='micro')
+    macro_f1 = f1_score(y_true, y_pred, average='macro')
+    
+    # Print and log metrics
+    print(f'Test Loss: {test_loss:.4f}, Accuracy: {accuracy:.4f}, Micro F1: {micro_f1:.4f}, Macro F1: {macro_f1:.4f}')
+    
+    if writer is not None and epoch is not None:
+        writer.add_scalar('Loss/test', test_loss, epoch)                 # Log test loss
+        writer.add_scalar('Accuracy/test', accuracy, epoch)              # Log test accuracy
+        writer.add_scalar('F1/Micro', micro_f1, epoch)                   # Log micro F1 score
+        writer.add_scalar('F1/Macro', macro_f1, epoch)                   # Log macro F1 score
+		
+# Evaluation function
+def evaluate_model(model, test_loader, criterion):
+    """
+    Evaluates the model on the test dataset and prints the test loss, accuracy, Macro F1 Mean, and MAE Mean.
+
+    Args:
+        model (nn.Module): The trained neural network model to be evaluated.
+        test_loader (DataLoader): DataLoader for the test dataset.
+        criterion (nn.Module): The loss function.
+
+    Returns:
+        None
+    """
+    model.eval() # Set model to evaluation mode
+    running_loss = 0.0
+    correct_predictions = 0
+    all_labels = []
+    all_preds = []
+
+    with torch.no_grad():                                           # Disable gradient computation
+        for inputs, labels in test_loader:
+            inputs, labels = inputs.to(device), labels.to(device)   # Move inputs and labels to GPU
+
+            outputs = model(inputs)             # Forward pass
+            loss = criterion(outputs, labels)   # Compute loss
+
+            running_loss += loss.item() * inputs.size(0)    # Accumulate loss
+            
+            _, preds = torch.max(outputs, 1)                            # Get predictions
+            correct_predictions += torch.sum(preds == labels).item()    # Count correct predictions
+
+            all_labels.extend(labels.cpu().numpy())                     # Collect all labels
+            all_preds.extend(preds.cpu().numpy())                       # Collect all predictions
+
+    test_loss = running_loss / len(test_loader.dataset)         # Calculate average test loss
+    accuracy = correct_predictions / len(test_loader.dataset)   # Calculate test accuracy
+    macro_f1 = f1_score(all_labels, all_preds, average='macro') # Calculate Macro F1 Mean
+    mae = mean_absolute_error(all_labels, all_preds)            # Calculate MAE Mean
+    
+    # Print test metrics
+    print(f'Test Loss: {test_loss:.4f}, Accuracy: {accuracy:.4f}, Macro F1 Mean: {macro_f1:.4f}, MAE Mean: {mae:.4f}')
+	
+# Training function with early stopping
+def train_model(model, train_loader, val_loader, test_loader, criterion, optimizer, scheduler, num_epochs=25, patience=5, log_dir=None, hparams=None):
+    """
+    Trains the model with early stopping and logs metrics to TensorBoard.
+
+    Args:
+        model (nn.Module): The neural network model to be trained.
+        train_loader (DataLoader): DataLoader for the training dataset.
+        val_loader (DataLoader): DataLoader for the validation dataset.
+        test_loader (DataLoader): DataLoader for the test dataset.
+        criterion (nn.Module): The loss function.
+        optimizer (torch.optim.Optimizer): The optimizer for training.
+        scheduler (torch.optim.lr_scheduler): Learning rate scheduler.
+        num_epochs (int, optional): The maximum number of epochs for training. Default is 25.
+        patience (int, optional): The number of epochs with no improvement after which training will be stopped. Default is 5.
+        log_dir (str, optional): The directory to save TensorBoard logs. If None, a new directory will be created.
+        hparams (dict, optional): Hyperparameters to log.
+
+    Returns:
+        None
+    """
+    if log_dir is None: log_dir = get_log_dir()                         # Create a unique log directory if not provided
+    else:               log_dir = get_log_dir(log_dir)                  # Create a unique log directory if provided
+    
+    writer = SummaryWriter(log_dir=log_dir)             # Initialize TensorBoard writer
+    early_stopping = EarlyStopping(patience=patience)   # Initialize early stopping
+    
+    # Log hyperparameters before training begins
+    # if hparams is not None:
+    #     writer.add_hparams(hparams, {})
+
+    # For each epoch
+    for epoch in range(num_epochs):
+        model.train()                # Set model to training mode
+        running_loss = 0.0
+        correct_predictions = 0
+
+        # Training loop
+        for inputs, labels in train_loader:
+            inputs, labels = inputs.to(device), labels.to(device) # Move inputs and labels to GPU
+            
+            optimizer.zero_grad() # Zero the parameter gradients
+            
+            # Forward pass
+            outputs = model(inputs)
+            loss = criterion(outputs, labels)
+            
+            # Backward pass and optimization
+            loss.backward()
+            optimizer.step()
+            
+            running_loss += loss.item() * inputs.size(0)             # Accumulate loss
+            _, preds = torch.max(outputs, 1)                         # Get predictions
+            correct_predictions += torch.sum(preds == labels).item() # Count correct predictions
+        
+        epoch_loss = running_loss / len(train_loader.dataset)             # Calculate average loss for this epoch
+        epoch_accuracy = correct_predictions / len(train_loader.dataset)  # Calculate accuracy for this epoch
+        
+        # Validation loop
+        model.eval() # Set model to evaluation mode
+        val_running_loss = 0.0
+        val_correct_predictions = 0
+        with torch.no_grad():                                           # Disable gradient computation for validation
+            for inputs, labels in val_loader:
+                inputs, labels = inputs.to(device), labels.to(device)   # Move inputs and labels to GPU
+                outputs = model(inputs)
+                loss = criterion(outputs, labels)
+                val_running_loss += loss.item() * inputs.size(0)        # Accumulate validation loss
+                _, preds = torch.max(outputs, 1)                        # Get predictions
+                val_correct_predictions += torch.sum(preds == labels).item() # Count correct predictions
+        
+        val_loss = val_running_loss / len(val_loader.dataset)               # Calculate average validation loss
+        val_accuracy = val_correct_predictions / len(val_loader.dataset)    # Calculate validation accuracy
+        
+        # Log metrics to TensorBoard
+        writer.add_scalar('Loss/train', epoch_loss, epoch)                      # Log training loss
+        writer.add_scalar('Loss/validation', val_loss, epoch)                   # Log validation loss
+        writer.add_scalar('Accuracy/train', epoch_accuracy, epoch)              # Log training accuracy
+        writer.add_scalar('Accuracy/validation', val_accuracy, epoch)           # Log validation accuracy
+        writer.add_scalar('Learning_Rate', scheduler.get_last_lr()[0], epoch)   # Log learning rate
+        
+        # Print metrics for the current epoch
+        print(f'Epoch {epoch+1}/{num_epochs}, Training Loss: {epoch_loss:.4f}, Training Accuracy: {epoch_accuracy:.4f}, Validation Loss: {val_loss:.4f}, Validation Accuracy: {val_accuracy:.4f}')
+
+        # Evaluate on test set and log metrics
+        evaluate_writer(model, test_loader, criterion, writer, epoch)
+
+        # Update learning rate
+        scheduler.step()
+
+        # Check early stopping criteria
+        early_stopping(val_loss)
+        if early_stopping.early_stop:
+            print(f"Early stopping at epoch {epoch+1}")
+            break
+
+    # Log final metrics to TensorBoard with hyperparameters
+    # if hparams is not None:
+    #     writer.add_hparams(hparams, {'hparam/accuracy': val_accuracy, 'hparam/loss': val_loss})
+    print('Training complete')
+    writer.close()
+	
+# Define a custom PyTorch classifier for hyperparameter search
+class PyTorchClassifier(BaseEstimator, ClassifierMixin):
+    """
+    Custom PyTorch classifier for hyperparameter search with scikit-learn compatibility.
+
+    Args:
+        hidden_sizes (tuple): Sizes of hidden layers.
+        dropout_prob (float): Dropout probability.
+        lr (float): Learning rate.
+        num_epochs (int): Number of epochs to train.
+        patience (int): Patience for early stopping.
+        log_dir (str): Directory to save TensorBoard logs.
+    """
+    def __init__(self, hidden_sizes=(512, 128, 64, 32), dropout_prob=0.5, lr=0.001, num_epochs=3, patience=5, log_dir=None):
+        self.hidden_sizes = hidden_sizes
+        self.dropout_prob = dropout_prob
+        self.lr = lr
+        self.num_epochs = num_epochs
+        self.patience = patience
+        self.log_dir = log_dir
+        self.model = None
+
+    def fit(self, X, y):
+        """
+        Train the PyTorch model on the given dataset.
+
+        Args:
+            X (numpy.ndarray): Training data features.
+            y (numpy.ndarray): Training data labels.
+
+        Returns:
+            self: Returns an instance of self.
+        """
+        input_size = X.shape[1]         # Number of input features
+        output_size = len(np.unique(y)) # Number of unique classes
+
+        # Initialize the model
+        self.model = DroughtClassifier(input_size, self.hidden_sizes, output_size, self.dropout_prob).to(device)
+
+        # Define loss function and optimizer
+        criterion = nn.CrossEntropyLoss()
+        optimizer = optim.Adam(self.model.parameters(), lr=self.lr)
+        scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=10, gamma=0.005)
+
+        # Create DataLoader for training data
+        train_tensor = torch.tensor(X, dtype=torch.float32)
+        labels_tensor = torch.tensor(y, dtype=torch.long)
+        train_dataset = TensorDataset(train_tensor, labels_tensor)
+        train_loader = DataLoader(train_dataset, batch_size=512, shuffle=True, num_workers=4, pin_memory=True)
+        
+        # Define hyperparameters for logging
+        hparams = {
+            'hidden_sizes': str(self.hidden_sizes),
+            'dropout_prob': self.dropout_prob,
+            'lr': self.lr
+        }
+
+        # Train the model
+        train_model(self.model, train_loader, val_loader, test_loader, criterion, optimizer, scheduler, self.num_epochs, self.patience, log_dir=self.log_dir, hparams=hparams)
+        return self
+
+    def predict(self, X):
+        """
+        Predict the labels for the given dataset.
+
+        Args:
+            X (numpy.ndarray): Data features.
+
+        Returns:
+            numpy.ndarray: Predicted labels.
+        """
+        self.model.eval()   # Set model to evaluation mode
+        test_tensor = torch.tensor(X, dtype=torch.float32)
+        test_loader = DataLoader(test_tensor, batch_size=512, shuffle=False, num_workers=4, pin_memory=True)
+        predictions = []
+
+        with torch.no_grad():  # Disable gradient computation
+            for inputs in test_loader:
+                inputs = inputs.to(device)              # Move inputs to GPU
+                outputs = self.model(inputs)            # Forward pass
+                _, preds = torch.max(outputs, 1)        # Get predictions
+                predictions.extend(preds.cpu().numpy()) # Store predictions
+
+        # Return predictions as a numpy array
+        return np.array(predictions)
+            </code></pre>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Santiago E. González Angarita. All rights reserved.</p>
+    </footer>
+</body>
+</html>
