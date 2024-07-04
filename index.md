@@ -2,122 +2,51 @@
 layout: default
 ---
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+# 👋 Hello, I'm Santiago!  
+🚀 Senior Member of Technical Staff with a focus on analytics and machine learning  
+🏫 Currently studying Computational Data Analytics at Georgia Institute of Technology  
+📍 Based in Texas  
+📧 sega97@gmail.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/santiago-e-gonzalez/)  
+👨‍💻 [SantiagoEnriqueGA](https://github.com/SantiagoEnriqueGA)  
 
-[Link to another page](./another-page.html).
+## **About Me 🌐**  
+Blending deep experience in data analytics, machine learning, and software engineering, I transform data into actionable insights and innovative solutions.
 
-There should be whitespace between paragraphs.
+### **Professional Highlights 🌟**  
+* **Senior Member of Technical Staff** - AT&T, Dallas, Texas (Present)
+* **Broadband Advanced Analyst** - AT&T, Dallas, Texas
+* **Metrics Reporting Analyst** - AT&T, Dallas, Texas
+* **Data Implementation Analyst** - IHS Markit, Dallas, Texas 
+* **Software Developer - ServiceNow** - Sabre Corporation, Southlake, Texas
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+### **Toolbox 🛠️**
+* **Languages:** Python, R, SQL, C, Java, JavaScript  
+* **Libraries:** Pandas, NumPy, Scikit-learn, PyTorch, PySpark
+* **Analytical Tools:** Power BI, Tableau, Palantir
+* **Certifications:** Advanced Data Science IBM Specialization, Advanced Machine Learning and Signal Processing, Applied AI with DeepLearning, Fundamentals of Scalable Data Science
 
-# Header 1
-
-This is a normal paragraph following a header. GitHub is a code hosting platform for version control and collaboration. It lets you and others work together on projects from anywhere.
-
-## Header 2
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
-### Header 3
-
-```js
-// Javascript code with syntax highlighting.
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
-```ruby
-# Ruby code with syntax highlighting
-GitHubPages::Dependencies.gems.each do |gem, version|
-  s.add_dependency(gem, "= #{version}")
-end
-```
-
-#### Header 4
-
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-*   This is an unordered list following a header.
-
-##### Header 5
-
-1.  This is an ordered list following a header.
-2.  This is an ordered list following a header.
-3.  This is an ordered list following a header.
-
-###### Header 6
-
-| head1        | head two          | three |
-|:-------------|:------------------|:------|
-| ok           | good swedish fish | nice  |
-| out of stock | good and plenty   | nice  |
-| ok           | good `oreos`      | hmm   |
-| ok           | good `zoute` drop | yumm  |
-
-### There's a horizontal rule below this.
-
-* * *
-
-### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-
-### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
-### Small image
-
-![Octocat](https://github.githubassets.com/images/icons/emoji/octocat.png)
-
-### Large image
-
-![Branching](https://guides.github.com/activities/hello-world/branching.png)
+### **Education 🎓**  
+* **Master of Science in Analytics** (Computational Data Analytics Track) - Georgia Institute of Technology   
+* **Bachelor of Science in Information Technology and Systems** - The University of Texas at Dallas 
 
 
-### Definition lists can be used with HTML syntax.
 
-<dl>
-<dt>Name</dt>
-<dd>Godzilla</dd>
-<dt>Born</dt>
-<dd>1952</dd>
-<dt>Birthplace</dt>
-<dd>Japan</dd>
-<dt>Color</dt>
-<dd>Green</dd>
-</dl>
+### **Projects University/Personal 📊**  
+Here are some projects I've worked on. Click on the links to see more about each!
 
-```
-Long, single-line code blocks should not wrap. They should horizontally scroll if they are too long. This line should be long enough to demonstrate this.
-```
+| Project                              | Description | Tools                             | Link                                                                                   |
+|--------------------------------------|-------------------------------|-----------------------------------|---------------------------------------|
+| Rental Pricing Dashboard             | XGBoost model for predicting apartment rental prices. Data collection, aggregation, and model fine-tuning for optimal accuracy and robustness.						| Python, XGBoost, Scikit-learn                   | [GitHub Repo](https://github.com/SantiagoEnriqueGA/d3_apartment_rent_prediction_vis) |
+| Conway's Game of Life                | Conway's Game of Life using Pygame for graphics and Numpy for array operations. Optimized drawing, pause/resume functionality, and more. 							| Python, Pygame, Numpy	| [GitHub Repo](https://github.com/SantiagoEnriqueGA/gameOfLife)                     |
+| Semantic Artist Similarity Analysis  | Analyzed artist similarity, building and analyzing artist similarity networks using NetworkX and visualzation with Plotly.                         				| Python, NetworkX, Plotly, D3.js   | [GitHub Repo](https://github.com/SantiagoEnriqueGA/artist_similarity_network)      |
+| Used Car Data Scraping and Analysis  | Automatically scraping data from Cars.com using BeautifulSoup. Pipeline to scrape data on several vehicle models, clean, and analyze the data.						| Python, BeautifulSoup             | [GitHub Repo](https://github.com/SantiagoEnriqueGA/used_car_price_visualization)   |
+| Custom Clustering                    | Custom classes for KMeans and DBSCAN from scratch, allowing for multiple clustering evaluation measures.																| Python, Numpy                     | [GitHub Repo](https://github.com/SantiagoEnriqueGA/custom_clustering)              |
+| Custom Ensemble Learning             | Custom classes for creating random forest classifiers and regressors, and for gradient boosted decision tree classifiers and regressors.                           | Python, Numpy                     | [GitHub Repo](https://github.com/SantiagoEnriqueGA/custom_ensemble_learning)       |
+| Neural Network Drought Prediction    | Neural network model for multiclass classification to predict drought levels using meteorological data. Data preprocessing, model building, hyperparameter tuning, and evaluation. | Python, PyTorch, SMOTE, PCA       | [GitHub Repo](https://github.com/SantiagoEnriqueGA/drought_prediction_pytorch)  |
 
-```
-The final element.
-```
+
+### **Leadership and Organizations 🏅**  
+* Dallas CASA (Court Appointed Special Advocates) (2021 - Current)
+* Co-Recruitment Chair, Delta Tau Delta Fraternity, UT Dallas (2016 - 2020)
+
