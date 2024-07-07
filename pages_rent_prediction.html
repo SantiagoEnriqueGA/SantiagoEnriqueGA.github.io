@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Apartment Classifieds Prediction and Visualization</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				<header id="header">
+					<h1>Apartment Classifieds Prediction</h1>
+					<p>Predicting apartment prices and visualizing data</p>
+				</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+						<section id="content" class="main">
+							<h2>Overview/Goal</h2>
+							<p>This project focuses on predicting apartment prices and visualizing data related to apartment listings. It combines various datasets to create predictive models and interactive visualizations using geographic and demographic information. Models tested include custom random forest, XGBoost, and H2O autoML. The final dashboard is built in JavaScript using D3.js.</p>
+
+							<h2>Data Sources</h2>
+							<ul>
+								<li><strong>Apt Listing Data:</strong> <a href="https://archive.ics.uci.edu/dataset/555/apartment+for+rent+classified">UCI Apartment Listing Dataset</a></li>
+								<li><strong>GIS Zip Data:</strong> <a href="https://www.arcgis.com/home/item.html?id=8d2012a2016e484dafaac0451f9aea24">ArcGIS Zip Data</a></li>
+								<li><strong>IRS Zip Data:</strong> <a href="https://www.irs.gov/statistics/soi-tax-stats-individual-income-tax-statistics-2020-zip-code-data-soi">IRS Individual Income Tax Statistics</a></li>
+								<li><strong>USA GeoJSON Data:</strong> <a href="https://eric.clst.org/tech/usgeojson/">US GeoJSON Data</a></li>
+								<li><strong>US States GeoJSON Data:</strong> <a href="https://github.com/OpenDataDE/State-zip-code-GeoJSON">State-zip-code-GeoJSON</a></li>
+							</ul>
+
+							<h2>Key Files</h2>
+							<ul>
+								<li><a href="dataJoining.py">dataJoining.py</a>: Joins datasets, generates zip codes, and integrates IRS data.</li>
+								<li><a href="dataFeatureEng.py">dataFeatureEng.py</a>: Cleans data and creates dummy variables for analysis.</li>
+								<li><a href="modelCreation.ipynb">modelCreation.ipynb</a>: Builds predictive models including random forest and XGBoost.</li>
+								<li><a href="aptVis.html">aptVis.html</a>: Interactive visualization tool using D3.js for predicting apartment prices.</li>
+							</ul>
+
+							<h2>How to Use</h2>
+							<ol>
+								<li>Clone the repository and set up the required dependencies.</li>
+								<li>Run <code>dataJoining.py</code> to combine datasets and generate zip codes.</li>
+								<li>Execute <code>dataFeatureEng.py</code> to clean data and create dummy variables.</li>
+								<li>Open and run <code>modelCreation.ipynb</code> to build predictive models and save predicted prices.</li>
+								<li>Launch <code>aptVis.html</code> in a web browser to interact with the visualization tool.</li>
+							</ol>
+
+							<h2>Screenshot</h2>
+							<img src="https://github.com/SantiagoEnriqueGA/d3_apartment_rent_prediction_vis/assets/50879742/7ed87ad8-c643-4608-ad89-fafc3b797acd" alt="Screenshot of the Apartment Visualization Tool" style="max-width: 100%; height: auto;">
+
+						</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<h2>Contact Me</h2>
+						<dl class="alt">
+							<dt>Phone</dt>
+								<dd>(832) 296-3193</dd>
+							<dt>Email</dt>
+								<dd><a href="sega97@gmail.com">sega97@gmail.com</a></dd>
+							<dt>LinkedIn</dt>
+								<dd><a href="https://www.linkedin.com/in/santiago-e-gonzalez/">linkedin.com/in/santiago-e-gonzalez</a></dd>
+							<dt>GitHub</dt>
+								<dd><a href="https://github.com/SantiagoEnriqueGA/">github.com/SantiagoEnriqueGA</a></dd>
+						</dl>
+					</section>
+					<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script>window.onload = function() {document.body.style.zoom = "75%";}</script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

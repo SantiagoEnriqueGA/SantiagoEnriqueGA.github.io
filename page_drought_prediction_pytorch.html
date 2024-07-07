@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Drought Prediction using Neural Network</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Drought Prediction</h1>
+						<p>A project on predicting drought levels using neural networks</p>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+						<section id="content" class="main">
+							<h2>Project Overview</h2>
+							<p>This project aims to gain experience in tuning a neural network for multiclass classification, specifically for predicting drought levels using meteorological data.</p>
+
+							<h2>Project Structure</h2>
+							<ul>
+								<li><a href="droughtPrediction_EDA.ipynb">droughtPrediction_EDA.ipynb</a>: Basic Exploratory Data Analysis (EDA)</li>
+								<li><a href="droughtPrediction_DataEng.ipynb">droughtPrediction_DataEng.ipynb</a>: Data preprocessing and feature engineering</li>
+								<li><a href="droughtPrediction_PyTorch_HP.ipynb">droughtPrediction_PyTorch_HP.ipynb</a>: Hyperparameter tuning using PyTorch</li>
+								<li><a href="droughtPrediction_PyTorch_Final.ipynb">droughtPrediction_PyTorch_Final.ipynb</a>: Final model evaluation and prediction pipeline</li>
+							</ul>
+
+							<h2>Model Architecture</h2>
+							<pre><code>DroughtClassifier(
+(layers): ModuleList(
+	(0): Linear(in_features=52, out_features=1024, bias=True)
+	(1): Linear(in_features=1024, out_features=512, bias=True)
+	(2): Linear(in_features=512, out_features=256, bias=True)
+	(3): Linear(in_features=256, out_features=128, bias=True)
+	(4): Linear(in_features=128, out_features=6, bias=True)
+)
+	(dropout): Dropout(p=0.2, inplace=False)
+)
+							</code></pre>
+
+							<h2>Final Hyperparameters</h2>
+							<ul>
+								<li>Scheduler: StepLR (step_size: 10, gamma: 0.5)</li>
+								<li>Dropout Probability: 0.2</li>
+								<li>Hidden Layer Sizes: (1024, 512, 256, 128)</li>
+								<li>Learning Rate: 0.001</li>
+							</ul>
+
+							<h2>Model Performance</h2>
+							<ul>
+								<li>Test Loss: 0.6352</li>
+								<li>Accuracy: 0.7337</li>
+								<li>Macro F1 Mean: 0.6895</li>
+								<li>MAE Mean: 0.3255</li>
+							</ul>
+
+							<h2>Dataset</h2>
+							<p>The data used for this project comes from Kaggle: <a href="https://www.kaggle.com/datasets/cdminix/us-drought-meteorological-data/data">US Drought Meteorological Data</a>.</p>
+
+							<h3>About the Dataset</h3>
+							<p>The US drought monitor measures drought across the US, created manually by experts using a wide range of data.</p>
+
+							<h3>Data Splits</h3>
+							<table>
+								<tr>
+									<th>Split</th>
+									<th>Year Range (inclusive)</th>
+									<th>Percentage (approximate)</th>
+								</tr>
+								<tr>
+									<td>Train</td>
+									<td>2000-2009</td>
+									<td>47%</td>
+								</tr>
+								<tr>
+									<td>Validation</td>
+									<td>2010-2011</td>
+									<td>10%</td>
+								</tr>
+								<tr>
+									<td>Test</td>
+									<td>2012-2020</td>
+									<td>43%</td>
+								</tr>
+							</table>
+
+							<h2>Conclusion</h2>
+							<p>This project demonstrates the process of tuning a neural network for multiclass classification on a real-world dataset.</p>
+						</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<h2>Contact Me</h2>
+						<dl class="alt">
+							<dt>Phone</dt>
+								<dd>(832) 296-3193</dd>
+							<dt>Email</dt>
+								<dd><a href="sega97@gmail.com">sega97@gmail.com</a></dd>
+							<dt>LinkedIn</dt>
+								<dd><a href="https://www.linkedin.com/in/santiago-e-gonzalez/">linkedin.com/in/santiago-e-gonzalez</a></dd>
+							<dt>GitHub</dt>
+								<dd><a href="https://github.com/SantiagoEnriqueGA/">github.com/SantiagoEnriqueGA</a></dd>
+						</dl>
+					</section>
+					<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script>window.onload = function() {document.body.style.zoom = "75%";}</script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

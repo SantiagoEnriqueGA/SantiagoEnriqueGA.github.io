@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Used Car Data Scraping and Analysis</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1>Used Car Data Scraping and Analysis</h1>
+            <p>Analyzing Lexus GX 460 listings from Cars.com</p>
+        </header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+						<section id="content" class="main">
+							<h2>Overview</h2>
+							<p>This project involves scraping data from Cars.com using Python scripts and analyzing the data for insights. It focuses on Lexus GX 460 listings, with scripts for scraping, cleaning, and analysis.</p>
+			
+							<h2>Files</h2>
+							<ul>
+								<li><code>carsDotComScrape.py</code>: Python script for scraping data related to the Lexus GX 460 model from Cars.com.</li>
+								<li><code>carsFileCleaning.py</code>: Python script for cleaning the scraped data, including removing irrelevant information and formatting data.</li>
+								<li><code>GX460_scrape.py</code>: Script combining scraping and cleaning operations specific to Lexus GX 460.</li>
+								<li><code>carsVis.ipynb</code>: Jupyter Notebook for data visualization and analysis using matplotlib, seaborn, and scikit-learn.</li>
+								<li><code>output_DATE.csv</code>: Raw scraped data from Cars.com listings.</li>
+								<li><code>output_DATE_cleaned.csv</code>: Cleaned and formatted data ready for analysis.</li>
+							</ul>
+			
+							<h2>Usage</h2>
+							<ol>
+								<li><strong>Scraping and Cleaning Data:</strong>
+									<ul>
+										<li>Edit <code>GX460_scrape.py</code> to modify the URL with desired filters for scraping Lexus GX 460 data.</li>
+										<li>Run <code>GX460_scrape.py</code> to extract and clean data, storing it in <code>output_DATE.csv</code>.</li>
+									</ul>
+								</li>
+								<li><strong>Visualizing Data:</strong>
+									<ul>
+										<li>Open and run <code>carsVis.ipynb</code> in Jupyter Notebook to visualize cleaned data and perform analysis.</li>
+									</ul>
+								</li>
+							</ol>
+			
+							<h2>Example Plots</h2>
+							<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/used_car_price_visualization/main/carsDotCom/plots/Violin%20and%20Box%20plots%20for%20'Year'%20vs%20'Price'.png" alt="Violin and Box plots for Year vs Price">
+							<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/used_car_price_visualization/main/carsDotCom/plots/Car%20Price%20vs%20Miles%20Driven%20(Color%20Coded%20by%20Year).png" alt="Car Price vs Miles Driven (Color Coded by Year)">
+							<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/used_car_price_visualization/main/carsDotCom/plots/Polynomial%20Car%20Price%20vs%20Miles%20Driven.png" alt="Polynomial Car Price vs Miles Driven">
+			
+						</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<h2>Contact Me</h2>
+						<dl class="alt">
+							<dt>Phone</dt>
+								<dd>(832) 296-3193</dd>
+							<dt>Email</dt>
+								<dd><a href="sega97@gmail.com">sega97@gmail.com</a></dd>
+							<dt>LinkedIn</dt>
+								<dd><a href="https://www.linkedin.com/in/santiago-e-gonzalez/">linkedin.com/in/santiago-e-gonzalez</a></dd>
+							<dt>GitHub</dt>
+								<dd><a href="https://github.com/SantiagoEnriqueGA/">github.com/SantiagoEnriqueGA</a></dd>
+						</dl>
+					</section>
+					<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script>window.onload = function() {document.body.style.zoom = "75%";}</script>
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

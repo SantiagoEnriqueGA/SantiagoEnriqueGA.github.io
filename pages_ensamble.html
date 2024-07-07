@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Custom Ensemble Learning Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Custom Ensemble Learning</h1>
+						<p>An educational project focusing on building ensemble learning algorithms from scratch</p>
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+						<section id="content" class="main">
+							<h2>Goal</h2>
+							<p>This project is primarily educational, aiming to understand various ensemble learning algorithms by implementing them from scratch using numpy for array processing and custom datasets.</p>
+
+							<h2>Overview</h2>
+							<p>This project includes implementations of custom random forest classifiers and regressors, as well as a gradient boosted decision tree regressor.</p>
+
+							<h2>Main Python Files</h2>
+							<ul>
+								<li><a href="dataPrep.py">dataPrep.py</a>: Contains functions for data preparation and one-hot encoding</li>
+								<li><a href="decisionTreeClassifier.py">decisionTreeClassifier.py</a>: Implements a decision tree classifier</li>
+								<li><a href="decisionTreeRegressor.py">decisionTreeRegressor.py</a>: Implements a decision tree regressor</li>
+								<li><a href="randomForestClassifier.py">randomForestClassifier.py</a>: Implements a custom random forest classifier</li>
+								<li><a href="randomForestRegressor.py">randomForestRegressor.py</a>: Implements a custom random forest regressor</li>
+								<li><a href="gradientBoostedRegressor.py">gradientBoostedRegressor.py</a>: Implements a gradient boosted decision tree regressor</li>
+								<li><a href="runRandomForest.py">runRandomForest.py</a>: Functions to run random forest on various datasets</li>
+							</ul>
+
+							<h2>Included CSV Files</h2>
+							<ul>
+								<li>Wisconsin_breast_prognostic.csv: Dataset for Wisconsin Breast Prognostic analysis</li>
+								<li>pima-indians-diabetes.csv: Dataset for Pima Indians Diabetes analysis</li>
+								<li>output_May-06-2024_cleaned.csv: Car listing data from "used_car_price_visualization" repository</li>
+							</ul>
+							
+							<h2>Usage Example</h2>
+							<p>This <code>run</code> function in <code>gradientBoostedRegressor.py</code> demonstrates how to prepare data, train the model, and evaluate its performance:</p>
+							<pre><code class="language-python">
+def run():
+	"""
+	Runs Gradient Boosted Decision Trees on the given dataset.
+	"""
+	# Source file location
+	file_orig = "data/carsDotCom.csv"
+
+	# Prepare and format data
+	df, file_loc = dp.DataPrep.prepare_data(file_orig, label_col_index=4, cols_to_encode=[1,2,3])
+
+	# Initialize GBDT object
+	gbdtDiab = gradientBoostedRegressor(file_loc, num_trees=10, random_seed=0, max_depth=3)
+
+	# Train GBDT model
+	gbdtDiab.fit(stats=True)
+
+	# Predict target values
+	predictions = gbdtDiab.predict()
+
+	# Get stats
+	stats = gbdtDiab.get_stats(predictions)
+	print(stats)
+if __name__ == "__main__":
+	run()
+							</code></pre>
+							
+							<h2>dataPrep.py</h2>
+							<h3>Class: DataPrep</h3>
+							<ul>
+								<li>one_hot_encode(df, cols): One-hot encodes non-numerical columns in a DataFrame</li>
+								<li>write_data(df, csv_file): Writes the DataFrame to a CSV file</li>
+								<li>prepare_data(csv_file, label_col_index, cols_to_encode=[], write_to_csv=True): Prepares data by loading a CSV file, one-hot encoding non-numerical columns, and optionally writing prepared data to a new CSV file</li>
+							</ul>
+
+							<h2>decisionTreeClassifier.py</h2>
+							<h3>Classes: Utility, DecisionTree, DecisionTreeWithInfoGain</h3>
+							<ul>
+								<li>Utility: Utility class for computing entropy, partitioning classes, and calculating information gain</li>
+								<li>DecisionTree: Decision tree for classification tasks</li>
+								<li>DecisionTreeWithInfoGain: Extends DecisionTree to use information gain for splitting</li>
+							</ul>
+
+							<h2>decisionTreeRegressor.py</h2>
+							<h3>Classes: Utility, DecisionTreeRegressor</h3>
+							<ul>
+								<li>Utility: Utility class for computing variance, partitioning classes, and calculating information gain</li>
+								<li>DecisionTreeRegressor: Decision tree for regression tasks</li>
+							</ul>
+
+							<h2>randomForestClassifier.py</h2>
+							<h3>Classes: RandomForest, RandomForestWithInfoGain, runRandomForest</h3>
+							<ul>
+								<li>RandomForest: Custom random forest classifier with bootstrapping and voting mechanisms</li>
+								<li>RandomForestWithInfoGain: Extends RandomForest to use information gain for splitting</li>
+								<li>runRandomForest: Functions to run the random forest classifier</li>
+							</ul>
+
+							<h2>randomForestRegressor.py</h2>
+							<h3>Classes: RandomForest, runRandomForest</h3>
+							<ul>
+								<li>RandomForest: Custom random forest regressor with bootstrapping and aggregation mechanisms</li>
+								<li>runRandomForest: Functions to run the random forest regressor</li>
+							</ul>
+
+							<h2>gradientBoostedRegressor.py</h2>
+							<h3>Class: gradientBoostedRegressor</h3>
+							<ul>
+								<li>gradientBoostedRegressor: Gradient boosted decision tree regressor for regression tasks</li>
+								<li>Attributes: random_seed, num_trees, max_depth, X, y, XX, numerical_cols</li>
+								<li>Methods: __init__, reset, fit, predict, get_stats</li>
+								<li>Example Usage: run function to prepare data, train the model, and evaluate performance</li>
+							</ul>
+
+							<h2>runRandomForest.py</h2>
+							<p>Functions to run custom random forest classifier and regressor on various datasets.</p>
+						</section>
+
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<section>
+						<h2>Contact Me</h2>
+						<dl class="alt">
+							<dt>Phone</dt>
+								<dd>(832) 296-3193</dd>
+							<dt>Email</dt>
+								<dd><a href="sega97@gmail.com">sega97@gmail.com</a></dd>
+							<dt>LinkedIn</dt>
+								<dd><a href="https://www.linkedin.com/in/santiago-e-gonzalez/">linkedin.com/in/santiago-e-gonzalez</a></dd>
+							<dt>GitHub</dt>
+								<dd><a href="https://github.com/SantiagoEnriqueGA/">github.com/SantiagoEnriqueGA</a></dd>
+						</dl>
+					</section>
+					<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+		<script>window.onload = function() {document.body.style.zoom = "75%";}</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/autoloader/prism-autoloader.min.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
