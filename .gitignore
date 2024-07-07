@@ -1,0 +1,6 @@
+
+# ignore archived
+archive/
+
+# ignore vscode settings
+.vscode/

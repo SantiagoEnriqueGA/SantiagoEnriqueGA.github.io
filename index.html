@@ -1,129 +1,307 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Santiago E. González Angarita - Personal Website</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header>
-        <div class="container">
-            <h1>Santiago E. González Angarita</h1>
-            <p>Welcome to my website!</p>
-            <p>Here you can find a sample of some of the projects I've been working on personally. I am currently based in Texas and am a Senior Member of Technical Staff at AT&T, and also studying Computational Data Analytics at the Georgia Institute of Technology. I enjoy blending my deep experience in data analytics, machine learning, and software engineering to transform data into actionable insights and innovative solutions.</p>
-            <p>PS: website is under construction, this is not my forte!</p>
-        </div>
-    </header>
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Santiago E. González Angarita - Personal Website</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-    <main>
-        <div class="container flex-container">
-            <section id="highlights" class="flex-item">
-                <h2>Professional Highlights</h2>
-                <ul>
-                    <li><strong>Senior Member of Technical Staff</strong> - AT&T, Dallas, Texas (Present)</li>
-                    <li><strong>Broadband Advanced Analyst</strong> - AT&T, Dallas, Texas</li>
-                    <li><strong>Metrics Reporting Analyst</strong> - AT&T, Dallas, Texas</li>
-                    <li><strong>Data Implementation Analyst</strong> - IHS Markit, Dallas, Texas</li>
-                    <li><strong>Software Developer - ServiceNow</strong> - Sabre Corporation, Southlake, Texas</li>
-                </ul>
-            </section>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-            <section id="toolbox" class="flex-item">
-                <h2>Toolbox</h2>
-                <p><strong>Languages:</strong> Python, R, SQL, C, JavaScript</p>
-                <p><strong>Libraries:</strong> Pandas, NumPy, Scikit-learn, PyTorch, PySpark</p>
-                <p><strong>Analytical Tools:</strong> Power BI, Tableau, Palantir</p>
-                <p><strong>Certifications:</strong> Advanced Data Science IBM Specialization, Advanced Machine Learning and Signal Processing, Applied AI with DeepLearning, Fundamentals of Scalable Data Science</p>
-            </section>
+				<!-- Header -->
+					<header id="header" class="alt">
+						<!-- <span class="logo"><img src="images/logo.svg" alt="" /></span> -->
+						<h1>Santiago E. González Angarita</h1>
+						<p>Welcome to my website!<br />
+						Here you can find out more about me and a sample of some of the projects I've been working on.<br /></p>
+					</header>
 
-            <section id="education" class="flex-item">
-                <h2>Education</h2>
-                <p><strong>Master of Science in Analytics</strong> (Computational Data Analytics Track) - Georgia Institute of Technology</p>
-                <p><strong>Bachelor of Science in Information Technology and Systems</strong> - The University of Texas at Dallas</p>
-            </section>
-        </div>
+				<!-- Nav -->
+					<nav id="nav">
+						<ul>
+							<li><a href="#intro" class="active">Introduction</a></li>
+							<li><a href="#prof">Professional Highlights</a></li>
+							<li><a href="#tools">Toolbox</a></li>
+							<li><a href="#proj">Projects </a></li>
+							<li><a href="#lao">Leadership and Organizations</a></li>
+						</ul>
+					</nav>
 
-        <section id="projects" class="container">
-            <h2>Projects University/Personal</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Project</th>
-                        <th>Description</th>
-                        <th>Tools</th>
-                        <th>Link</th>
-                        <th>Repo Link</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Rental Pricing Dashboard</td>
-                        <td>XGBoost model for predicting apartment rental prices. Data collection, aggregation, and model fine-tuning for optimal accuracy and robustness.</td>
-                        <td>Python, XGBoost, Scikit-learn</td>
-                        <td><a href="rental_pricing_dashboard.html">Click Me!</a></td>
-                        <td><a href="https://github.com/SantiagoEnriqueGA/d3_apartment_rent_prediction_vis" target="_blank">Repo Link</a></td>
-                    </tr>
-                    <tr>
-                        <td>Conway's Game of Life</td>
-                        <td>Conway's Game of Life using Pygame for graphics and Numpy for array operations. Optimized drawing, pause/resume functionality, and more.</td>
-                        <td>Python, Pygame, Numpy</td>
-                        <td><a href="conways_game_of_life.html">Click Me!</a></td>
-                        <td><a href="https://github.com/SantiagoEnriqueGA/gameOfLife" target="_blank">Repo Link</a></td>
-                    </tr>
-                    <tr>
-                        <td>Semantic Artist Similarity Analysis</td>
-                        <td>Analyzed artist similarity, building and analyzing artist similarity networks using NetworkX and visualization with Plotly.</td>
-                        <td>Python, NetworkX, Plotly, D3.js</td>
-                        <td><a href="semantic_artist_similarity.html">Click Me!</a></td>
-                        <td><a href="https://github.com/SantiagoEnriqueGA/artist_similarity_network" target="_blank">Repo Link</a></td>
-                    </tr>
-                    <tr>
-                        <td>Used Car Data Scraping and Analysis</td>
-                        <td>Automatically scraping data from Cars.com using BeautifulSoup. Pipeline to scrape data on several vehicle models, clean, and analyze the data.</td>
-                        <td>Python, BeautifulSoup</td>
-                        <td><a href="used_car_data_scraping.html">Click Me!</a></td>
-                        <td><a href="https://github.com/SantiagoEnriqueGA/used_car_price_visualization" target="_blank">Repo Link</a></td>
-                    </tr>
-                    <tr>
-                        <td>Custom Clustering</td>
-                        <td>Custom classes for KMeans and DBSCAN from scratch, allowing for multiple clustering evaluation measures.</td>
-                        <td>Python, Numpy</td>
-                        <td><a href="custom_clustering.html">Click Me!</a></td>
-                        <td><a href="https://github.com/SantiagoEnriqueGA/custom_clustering" target="_blank">Repo Link</a></td>
-                    </tr>
-                    <tr>
-                        <td>Custom Ensemble Learning</td>
-                        <td>Custom classes for creating random forest classifiers and regressors, and for gradient boosted decision tree classifiers and regressors.</td>
-                        <td>Python, Numpy</td>
-                        <td><a href="custom_ensemble_learning.html">Click Me!</a></td>
-                        <td><a href="https://github.com/SantiagoEnriqueGA/custom_ensemble_learning" target="_blank">Repo Link</a></td>
-                    </tr>
-                    <tr>
-                        <td>Neural Network Drought Prediction</td>
-                        <td>Neural network model for multiclass classification to predict drought levels using meteorological data. Data preprocessing, model building, hyperparameter tuning, and evaluation.</td>
-                        <td>Python, PyTorch, SMOTE, PCA</td>
-                        <td><a href="neural_network_drought_prediction.html">Click Me!</a></td>
-                        <td><a href="https://github.com/SantiagoEnriqueGA/drought_prediction_pytorch" target="_blank">Repo Link</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+				<!-- Main -->
+					<div id="main">
 
-        <section id="leadership" class="container">
-            <h2>Leadership and Organizations</h2>
-            <ul>
-                <li>Dallas CASA (Court Appointed Special Advocates) (2021 - Current)</li>
-                <li>Co-Recruitment Chair, Delta Tau Delta Fraternity, UT Dallas (2016 - 2020)</li>
-            </ul>
-        </section>
-    </main>
+						<!-- Introduction -->
+							<section id="intro" class="main">
+								<div class="spotlight">
+									<div class="content">
+										<header class="major">
+											<h2>About Me</h2>
+										</header>
+										<p>I am currently based in Texas, am a Senior Member of Technical Staff at AT&T, 
+											and studying Computational Data Analytics at the Georgia Institute of Technology. 
+											I enjoy blending my deep experience in data analytics, machine learning, 
+											and software engineering to transform data into actionable insights and innovative solutions.</p>
+										<header class="major">
+											<h2>Education</h2>
+										</header>
+										<p>Master of Science in Analytics (Computational Data Analytics) 
+											<br /> <b>Georgia Institute of Technology</b>
+										<br /><br />
+											Bachelor of Science in Information Technology and Systems <br />
+												<b>The University of Texas at Dallas</b></p>
+										<!-- <ul class="actions">
+											<li><a href="generic.html" class="button">Learn More</a></li>
+										</ul> -->
+									</div>
+									<span class="image"><img src="images/pic01.jpg" alt="" /></span>
+								</div>
+							</section>
 
-    <footer class="container">
-        <p>&copy; 2024 Santiago E. González Angarita</p>
-    </footer>
+						<!-- Professional Section -->
+							<section id="prof" class="main special">
+								<header class="major">
+									<h2>Professional Highlights</h2>
+								</header>
+								<ul class="features">
+									<li>
+										<span class="icon solid major style5 fa-globe"></span>
+										<h3>AT&T</h3>
+										<p><b>Senior Member of Technical Staff</b>
+										<br />ADD DESC HERE</p>
+									</li>
+									<li>
+										<span class="icon solid major style5 fa-globe"></span>
+										<h3>AT&T</h3>
+										<p><b>Broadband Advanced Analyst</b>
+										<br />ADD DESC HERE</p>
+									</li>
+									<li>
+										<span class="icon solid major style5 fa-globe"></span>
+										<h3>AT&T</h3>
+										<p><b>Metrics Reporting Analyst</b>
+										<br />ADD DESC HERE</p>
+									</li>
+									<li>
+										<span class="icon solid major style3 fa-long-arrow-alt-up"></span>
+										<h3>IHS Markit</h3>
+										<p><b>Data Implementation Analyst</b>
+										<br />ADD DESC HERE</p>
+									</li>
+									<li>
+										<span class="icon solid major style1 fa-plane"></span>
+										<h3>Sabre Corporation</h3>
+										<p><b>Software Developer</b>
+										<br />ADD DESC HERE</p>
+									</li>
+								</ul>
+								<!-- <footer class="major">
+									<ul class="actions special">
+										<li><a href="generic.html" class="button">Learn More</a></li>
+									</ul>
+								</footer> -->
+							</section>
 
-    <script src="scripts/main.js"></script>
-</body>
+						<!-- Toolbox Section -->
+							<section id="tools" class="main special">
+								<header class="major">
+									<h2>My Toolbox</h2>
+								</header>
+								<ul class="statistics">
+									<li class="style1">
+										<span class="icon solid fa-code-branch"></span>
+										<strong>Languages</strong> 
+											Python<br /> 
+											R<br /> 
+											SQL (PL-SQL / T-SQL)<br />
+											C<br />
+											JavaScript
+									</li>
+									<li class="style2">
+										<span class="icon fa-folder-open"></span>
+										<strong>Libraries</strong> 
+											Pandas<br />
+											NumPy<br />
+											Scikit-learn<br />
+											PyTorch<br />
+											PySpark<br />
+									</li>
+									<li class="style3">
+										<span class="icon solid fa-signal"></span>
+										<strong>Presentation</strong> 
+											Power BI<br /> 
+											Tableau<br />
+											Plotly Dash<br />
+											D3.js<br />
+									</li>
+									<li class="style4">
+										<span class="icon solid fa-database"></span>
+										<strong>Databases</strong> 
+											Palantir<br />
+											Snowflake<br />
+											Databricks<br />
+											Azure<br />
+											AWS<br />
+									</li>
+									<!-- <li class="style5">
+										<span class="icon fa-gem"></span>
+										<strong>1,024</strong> Nullam
+									</li> -->
+								</ul>
+								<!-- <p class="content">Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl eu arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum ac arcu sit amet, fermentum pellentesque et purus. Integer maximus varius lorem, sed convallis diam accumsan sed. Etiam porttitor placerat sapien, sed eleifend a enim pulvinar faucibus semper quis ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer eget purus nec nulla mattis et accumsan ut magna libero. Morbi auctor iaculis porttitor. Sed ut magna ac risus et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras eu ornare dui curabitur lacinia.</p>
+								<footer class="major">
+									<ul class="actions special">
+										<li><a href="generic.html" class="button">Learn More</a></li>
+									</ul>
+								</footer> -->
+							</section>
+
+						<!-- Project Section -->
+						<section id="proj" class="main special">
+							<header class="major">
+								<h2>Projects</h2>
+								<p>The following projects I've worked on for either personal development, curiosity, or through university assignments.</p>
+							</header>
+							<div class="table-wrapper">
+								<table>
+									<thead>
+										<tr>
+											<th></th>
+											<th>Project</th>
+											<th>Description</th>
+											<th>Tools</th>
+											<th>Links</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td><span class="icon solid fa-code-branch"></span></td>
+                    						<td class="style1">Rental Pricing Dashboard</td>
+											<td>XGBoost model for predicting apartment rental prices. Data collection, aggregation, and model fine-tuning for optimal accuracy and robustness.</td>
+											<td>Python, XGBoost, Scikit-learn</td>
+											<td><a href="https://github.com/SantiagoEnriqueGA/d3_apartment_rent_prediction_vis">GitHub Repo</a></td>
+										</tr>
+										<tr>
+											<td><span class="icon solid fa-code"></span></td>
+                    						<td class="style2">Conway's Game of Life</td>
+											<td>Conway's Game of Life using Pygame for graphics and Numpy for array operations. Optimized drawing, pause/resume functionality, and more.</td>
+											<td>Python, Pygame, Numpy</td>
+											<td><a href="https://github.com/SantiagoEnriqueGA/gameOfLife">GitHub Repo</a></td>
+										</tr>
+										<tr>
+											<td><span class="icon solid fa-palette"></span></td>
+                    						<td class="style3">Semantic Artist Similarity Analysis</td>
+											<td>Analyzed artist similarity, building and analyzing artist similarity networks using NetworkX and visualization with Plotly.</td>
+											<td>Python, NetworkX, Plotly, D3.js</td>
+											<td><a href="https://github.com/SantiagoEnriqueGA/artist_similarity_network">GitHub Repo</a></td>
+										</tr>
+										<tr>
+											<td><span class="icon solid fa-car"></span></td>
+                    						<td class="style4">Used Car Data Scraping and Analysis</td>
+											<td>Automatically scraping data from Cars.com using BeautifulSoup. Pipeline to scrape data on several vehicle models, clean, and analyze the data.</td>
+											<td>Python, BeautifulSoup</td>
+											<td><a href="https://github.com/SantiagoEnriqueGA/used_car_price_visualization">GitHub Repo</a></td>
+										</tr>
+										<tr>
+											<td><span class="icon solid fa-clone"></span></td>
+                    						<td class="style5">Custom Clustering</td>
+											<td>Custom classes for KMeans and DBSCAN from scratch, allowing for multiple clustering evaluation measures.</td>
+											<td>Python, Numpy</td>
+											<td><a href="https://github.com/SantiagoEnriqueGA/custom_clustering">GitHub Repo</a></td>
+										</tr>
+										<tr>
+											<td><span class="icon solid fa-layer-group"></span></td>
+                    						<td class="style6">Custom Ensemble Learning</td>
+											<td>Custom classes for creating random forest classifiers and regressors, and for gradient boosted decision tree classifiers and regressors.</td>
+											<td>Python, Numpy</td>
+											<td><a href="https://github.com/SantiagoEnriqueGA/custom_ensemble_learning">GitHub Repo</a></td>
+										</tr>
+										<tr>
+											<td><span class="icon solid fa-water"></span></td>
+                    						<td class="style7">Neural Network Drought Prediction</td>
+											<td>Neural network model for multiclass classification to predict drought levels using meteorological data. Data preprocessing, model building, hyperparameter tuning, and evaluation.</td>
+											<td>Python, PyTorch, SMOTE, PCA</td>
+											<td><a href="https://github.com/SantiagoEnriqueGA/drought_prediction_pytorch">GitHub Repo</a></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<!-- <p class="content">Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl eu arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum ac arcu sit amet, fermentum pellentesque et purus. Integer maximus varius lorem, sed convallis diam accumsan sed. Etiam porttitor placerat sapien, sed eleifend a enim pulvinar faucibus semper quis ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer eget purus nec nulla mattis et accumsan ut magna libero. Morbi auctor iaculis porttitor. Sed ut magna ac risus et hendrerit scelerisque. Praesent eleifend lacus in lectus aliquam porta. Cras eu ornare dui curabitur lacinia.</p>
+							<footer class="major">
+								<ul class="actions special">
+									<li><a href="generic.html" class="button">Learn More</a></li>
+								</ul>
+							</footer> -->
+						</section>
+
+
+						<!-- Get Started -->
+							<section id="lao" class="main special">
+								<header class="major">
+									<h2>Leadership and Organizations</h2>
+									<p>Dallas CASA (Court Appointed Special Advocates) (2021 - Current)</br>
+										Co-Recruitment Chair, Delta Tau Delta Fraternity, UT Dallas (2016 - 2020)</p>
+								</header>
+								<!-- <footer class="major">
+									<ul class="actions special">
+										<li><a href="generic.html" class="button primary">Get Started</a></li>
+										<li><a href="generic.html" class="button">Learn More</a></li>
+									</ul>
+								</footer> -->
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<!-- <section>
+							<h2>Aliquam sed mauris</h2>
+							<p>Sed lorem ipsum dolor sit amet et nullam consequat feugiat consequat magna adipiscing tempus etiam dolore veroeros. eget dapibus mauris. Cras aliquet, nisl ut viverra sollicitudin, ligula erat egestas velit, vitae tincidunt odio.</p>
+							<ul class="actions">
+								<li><a href="generic.html" class="button">Learn More</a></li>
+							</ul>
+						</section> -->
+						<section>
+							<h2>Contact Me</h2>
+							<dl class="alt">
+								<dt>Phone</dt>
+									<dd>(832) 296-3193</dd>
+								<dt>Email</dt>
+									<dd><a href="sega97@gmail.com">sega97@gmail.com</a></dd>
+								<dt>LinkedIn</dt>
+									<dd><a href="https://www.linkedin.com/in/santiago-e-gonzalez/">linkedin.com/in/santiago-e-gonzalez</a></dd>
+								<dt>GitHub</dt>
+									<dd><a href="https://github.com/SantiagoEnriqueGA/">github.com/SantiagoEnriqueGA</a></dd>
+							</dl>
+							<!-- <ul class="icons">
+								<li><a href="#" class="icon brands fa-twitter alt"><span class="label">Twitter</span></a></li>
+								<li><a href="#" class="icon brands fa-facebook-f alt"><span class="label">Facebook</span></a></li>
+								<li><a href="#" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
+								<li><a href="#" class="icon brands fa-github alt"><span class="label">GitHub</span></a></li>
+								<li><a href="#" class="icon brands fa-dribbble alt"><span class="label">Dribbble</span></a></li>
+							</ul> -->
+						</section>
+						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
