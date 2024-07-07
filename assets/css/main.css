@@ -2725,6 +2725,7 @@ input, select, textarea {
 
 		table td {
 			padding: 0.75em 0.75em;
+			text-align: left; /* Align table data to the left */
 		}
 
 		table th {
