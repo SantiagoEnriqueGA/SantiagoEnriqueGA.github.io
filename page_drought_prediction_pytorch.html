@@ -25,22 +25,32 @@
 
 				<!-- Main -->
 					<div id="main">
-
+						
 						<!-- Content -->
-						<section id="content" class="main">
-							<h2>Project Overview</h2>
-							<p>This project aims to gain experience in tuning a neural network for multiclass classification, specifically for predicting drought levels using meteorological data.</p>
-
-							<h2>Project Structure</h2>
-							<ul>
-								<li><a href="droughtPrediction_EDA.ipynb">droughtPrediction_EDA.ipynb</a>: Basic Exploratory Data Analysis (EDA)</li>
-								<li><a href="droughtPrediction_DataEng.ipynb">droughtPrediction_DataEng.ipynb</a>: Data preprocessing and feature engineering</li>
-								<li><a href="droughtPrediction_PyTorch_HP.ipynb">droughtPrediction_PyTorch_HP.ipynb</a>: Hyperparameter tuning using PyTorch</li>
-								<li><a href="droughtPrediction_PyTorch_Final.ipynb">droughtPrediction_PyTorch_Final.ipynb</a>: Final model evaluation and prediction pipeline</li>
-							</ul>
-
-							<h2>Model Architecture</h2>
-							<pre><code>DroughtClassifier(
+						<section id="intro" class="main">
+							<div class="spotlight">
+								<div class="content">
+									<header class="major">
+										<h2>Project Overview</h2>
+									</header>
+									<p>This project aims to gain experience in tuning a neural network for multiclass classification, specifically for predicting drought levels using meteorological data.</p>
+									
+									<header class="major">
+										<h2>Project Structure</h2>
+									</header>
+									<ul>
+										<li><a href="droughtPrediction_EDA.ipynb">droughtPrediction_EDA.ipynb</a>: Basic Exploratory Data Analysis (EDA)</li>
+										<li><a href="droughtPrediction_DataEng.ipynb">droughtPrediction_DataEng.ipynb</a>: Data preprocessing and feature engineering</li>
+										<li><a href="droughtPrediction_PyTorch_HP.ipynb">droughtPrediction_PyTorch_HP.ipynb</a>: Hyperparameter tuning using PyTorch</li>
+										<li><a href="droughtPrediction_PyTorch_Final.ipynb">droughtPrediction_PyTorch_Final.ipynb</a>: Final model evaluation and prediction pipeline</li>
+									</ul>
+									
+									
+									<header class="major">
+										<h2>Model Architecture</h2>
+									</header>
+									
+									<pre><code>DroughtClassifier(
 (layers): ModuleList(
 	(0): Linear(in_features=52, out_features=1024, bias=True)
 	(1): Linear(in_features=1024, out_features=512, bias=True)
@@ -50,58 +60,113 @@
 )
 	(dropout): Dropout(p=0.2, inplace=False)
 )
-							</code></pre>
+									</code></pre>
 
-							<h2>Final Hyperparameters</h2>
-							<ul>
-								<li>Scheduler: StepLR (step_size: 10, gamma: 0.5)</li>
-								<li>Dropout Probability: 0.2</li>
-								<li>Hidden Layer Sizes: (1024, 512, 256, 128)</li>
-								<li>Learning Rate: 0.001</li>
-							</ul>
+									<header class="major">
+										<h2>Final Hyperparameters</h2>
+									</header>
+									<ul>
+										<li>Scheduler: StepLR (step_size: 10, gamma: 0.5)</li>
+										<li>Dropout Probability: 0.2</li>
+										<li>Hidden Layer Sizes: (1024, 512, 256, 128)</li>
+										<li>Learning Rate: 0.001</li>
+									</ul>
+									
+									<header class="major">
+										<h2>Model Performance</h2>
+									</header>
+									<ul>
+										<li><strong>Loss</strong>: 0.6352</li>
+										<li><strong>Accuracy</strong>: 0.7337</li>
+										<li><strong>Macro F1 Mean</strong>: 0.6895</li>
+										<li><strong>MAE Mean</strong>: 0.3255</li>
+									</ul>
+									
+									<header class="major">
+										<h2>Dataset</h2>
+									</header>
+									<p>The data used for this project comes from Kaggle: <a href="https://www.kaggle.com/datasets/cdminix/us-drought-meteorological-data/data">US Drought Meteorological Data</a>. The US drought monitor measures drought across the US, created manually by experts using a wide range of data.</p>
 
-							<h2>Model Performance</h2>
-							<ul>
-								<li>Test Loss: 0.6352</li>
-								<li>Accuracy: 0.7337</li>
-								<li>Macro F1 Mean: 0.6895</li>
-								<li>MAE Mean: 0.3255</li>
-							</ul>
+									<h3>Data Splits</h3>
+									<table>
+										<tr>
+											<th>Split</th>
+											<th>Year Range (inclusive)</th>
+											<th>Percentage (approximate)</th>
+										</tr>
+										<tr>
+											<td>Train</td>
+											<td>2000-2009</td>
+											<td>47%</td>
+										</tr>
+										<tr>
+											<td>Validation</td>
+											<td>2010-2011</td>
+											<td>10%</td>
+										</tr>
+										<tr>
+											<td>Test</td>
+											<td>2012-2020</td>
+											<td>43%</td>
+										</tr>
+									</table>
 
-							<h2>Dataset</h2>
-							<p>The data used for this project comes from Kaggle: <a href="https://www.kaggle.com/datasets/cdminix/us-drought-meteorological-data/data">US Drought Meteorological Data</a>.</p>
+									<header class="major">
+										<h2>Model Visualized</h2>
+									</header>
+									<div class="row">
+										<div class="column">
+											<img src="images/drought_model_simp.png" alt="Snow" style="width:100%">
+										</div>
+										<div class="column">
+											<img src="images/drought_model_comp.png"  alt="Forest" style="width:100%">
+										</div>
+									</div>
 
-							<h3>About the Dataset</h3>
-							<p>The US drought monitor measures drought across the US, created manually by experts using a wide range of data.</p>
+									<header class="major">
+										<h2>Model Explained</h2>
+									</header>
+									<ul>
+										<li><strong>Input Layer:</strong> The input tensor has a shape of <code>(1, 52)</code>, indicating a batch size of 1 and 52 input features.</li>
+										<li><strong>First Linear Layer (layers.0):</strong> <br>
+											- <strong>weights:</strong> <code>layers.0.weight (1024, 52)</code><br>
+											- <strong>bias:</strong> <code>layers.0.bias (1024)</code><br>
+											This layer maps the 52 input features to 1024 features using a linear transformation.
+										</li>
+										<li><strong>First Activation and Dropout:</strong> The output from the first linear layer passes through a ReLU activation function, followed by a dropout layer to introduce regularization. Represented by <code>ReLUBackward0</code> and <code>TBackward0</code>.</li>
+										<li><strong>Second Linear Layer (layers.1):</strong> <br>
+											- <strong>weights:</strong> <code>layers.1.weight (512, 1024)</code><br>
+											- <strong>bias:</strong> <code>layers.1.bias (512)</code><br>
+											This layer takes the 1024 features from the previous layer and maps them to 512 features.
+										</li>
+										<li><strong>Second Activation and Dropout:</strong> Similar to the first layer, the output from the second linear layer passes through ReLU activation and dropout. Represented by <code>ReLUBackward0</code> and <code>TBackward0</code>.</li>
+										<li><strong>Third Linear Layer (layers.2):</strong> <br>
+											- <strong>weights:</strong> <code>layers.2.weight (256, 512)</code><br>
+											- <strong>bias:</strong> <code>layers.2.bias (256)</code><br>
+											This layer reduces the 512 features to 256 features.
+										</li>
+										<li><strong>Third Activation and Dropout:</strong> Again, the output goes through ReLU activation and dropout. Represented by <code>ReLUBackward0</code> and <code>TBackward0</code>.</li>
+										<li><strong>Fourth Linear Layer (layers.3):</strong> <br>
+											- <strong>weights:</strong> <code>layers.3.weight (128, 256)</code><br>
+											- <strong>bias:</strong> <code>layers.3.bias (128)</code><br>
+											This layer further reduces the features from 256 to 128.
+										</li>
+										<li><strong>Fourth Activation and Dropout:</strong> The output undergoes ReLU activation and dropout. Represented by <code>ReLUBackward0</code> and <code>TBackward0</code>.</li>
+										<li><strong>Fifth (Output) Linear Layer (layers.4):</strong> <br>
+											- <strong>weights:</strong> <code>layers.4.weight (6, 128)</code><br>
+											- <strong>bias:</strong> <code>layers.4.bias (6)</code><br>
+											This final layer maps the 128 features to 6 output classes.
+										</li>
+										<li><strong>Output:</strong> The final output tensor has a shape of <code>(1, 6)</code>, representing the model's prediction probabilities for each of the 6 classes.</li>
+										<li><strong>AccumulateGrad Nodes:</strong> These nodes (e.g., <code>AccumulateGrad</code>) represent the gradients that are accumulated during the backward pass for each parameter in the model. These gradients are used by the optimizer to update the model's parameters during training.</li>
+									</ul>
 
-							<h3>Data Splits</h3>
-							<table>
-								<tr>
-									<th>Split</th>
-									<th>Year Range (inclusive)</th>
-									<th>Percentage (approximate)</th>
-								</tr>
-								<tr>
-									<td>Train</td>
-									<td>2000-2009</td>
-									<td>47%</td>
-								</tr>
-								<tr>
-									<td>Validation</td>
-									<td>2010-2011</td>
-									<td>10%</td>
-								</tr>
-								<tr>
-									<td>Test</td>
-									<td>2012-2020</td>
-									<td>43%</td>
-								</tr>
-							</table>
 
-							<h2>Conclusion</h2>
-							<p>This project demonstrates the process of tuning a neural network for multiclass classification on a real-world dataset.</p>
+									
+								</div>
+							</div>
 						</section>
-
+						
 					</div>
 
 				<!-- Footer -->
