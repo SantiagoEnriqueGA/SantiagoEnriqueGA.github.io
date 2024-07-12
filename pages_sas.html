@@ -21,23 +21,29 @@
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<h1>Semantic Artist Similarity Analysis</h1>
-						<p>Analyzing artist similarity using the SAS Dataset</p>
-					</header>
+			<!-- Header -->
+			<header id="header">
+				<h1>Semantic Artist Similarity Analysis</h1>
+				<p>Analyzing artist similarity using the SAS Dataset</p>
+			</header>
 
-				<!-- Main -->
-					<div id="main">
+			<!-- Main -->
+			<div id="main">
 
-						<!-- Content -->
-						<section id="content" class="main">
-							<h2>Overview</h2>
+				<!-- Content -->
+				<section id="intro" class="main">
+					<div class="spotlight">
+						<div class="content">
+							<header class="major">
+								<h2>Overview</h2>
+							</header>
 							<p>This project analyzes artist similarity using data from the Semantic Artist Similarity (SAS) Dataset. It involves building and visualizing artist similarity networks using NetworkX and D3.js.</p>
 
-							<h2>Files</h2>
+							<header class="major">
+								<h2>Files</h2>
+							</header>
 							<ul>
 								<li><code>SAS_networkx.py</code>: Python script for building and analyzing the artist similarity network using NetworkX.</li>
 								<li><code>SAS_D3.html</code>: HTML file for visualizing the network using D3.js.</li>
@@ -46,7 +52,9 @@
 								<li><code>dataset-artist-similarity/</code>: Folder containing data from the SAS dataset.</li>
 							</ul>
 
-							<h2>SAS Dataset</h2>
+							<header class="major">
+								<h2>SAS Dataset</h2>
+							</header>
 							<p>The SAS Dataset includes artist entities with their biography texts and a list of the top-10 most similar artists within the datasets used as ground truth.</p>
 
 							<h3>Files in the Dataset</h3>
@@ -56,56 +64,78 @@
 								<li>Biography Texts: Biography texts of each artist stored as <code>.txt</code> files.</li>
 							</ul>
 
-							<h2>SAS_networkx.py</h2>
+							<header class="major">
+								<h2>SAS_networkx.py</h2>
+							</header>
 							<p>This Python script builds and analyzes the artist similarity network using NetworkX.</p>
 							<ul>
 								<li><strong>Usage Example:</strong> See detailed usage and functionalities within the script.</li>
 							</ul>
 
-							<h2>SAS_D3.html</h2>
+							<header class="major">
+								<h2>SAS_D3.html</h2>
+							</header>
 							<p>This HTML file provides a visualization of the artist similarity network using D3.js.</p>
 							<ul>
 								<li><strong>Usage:</strong> Open <code>SAS_D3.html</code> in a web browser to interactively explore the network.</li>
 							</ul>
 
-							<h2>Example Plots</h2>
-							<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/artist_similarity_network/main/plots/adnan%20sami_to_e-40_plotly.png" alt="Example Plot 1">
-							<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/artist_similarity_network/main/plots/switchfoot_to_taylor%20swift_plotly.png" alt="Example Plot 2">
-							<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/artist_similarity_network/main/plots/clustred.png" alt="Example Plot 3">
-						</section>
+							<header class="major">
+								<h2>Example Plots</h2>
+							</header>
+							<div class="row">
+								<div class="column">
+									<a href="https://raw.githubusercontent.com/SantiagoEnriqueGA/artist_similarity_network/main/plots/adnan%20sami_to_e-40_plotly.png" target="_blank">
+										<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/artist_similarity_network/main/plots/adnan%20sami_to_e-40_plotly.png" alt="Example Plot 1" style="width:100%">
+									</a>
+								</div>
+								<div class="column">
+									<a href="https://raw.githubusercontent.com/SantiagoEnriqueGA/artist_similarity_network/main/plots/switchfoot_to_taylor%20swift_plotly.png" target="_blank">
+										<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/artist_similarity_network/main/plots/switchfoot_to_taylor%20swift_plotly.png" alt="Example Plot 2" style="width:100%">
+									</a>
+								</div>
+								<div class="column">
+									<a href="https://raw.githubusercontent.com/SantiagoEnriqueGA/artist_similarity_network/main/plots/clustred.png" target="_blank">
+										<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/artist_similarity_network/main/plots/clustred.png" alt="Example Plot 3" style="width:100%">
+									</a>
+								</div>
+							</div>
+							
 
-
+						</div>
 					</div>
-
-				<!-- Footer -->
-				<footer id="footer">
-					<section>
-						<h2>Contact Me</h2>
-						<dl class="alt">
-							<dt>Phone</dt>
-								<dd>(832) 296-3193</dd>
-							<dt>Email</dt>
-								<dd><a href="sega97@gmail.com">sega97@gmail.com</a></dd>
-							<dt>LinkedIn</dt>
-								<dd><a href="https://www.linkedin.com/in/santiago-e-gonzalez/">linkedin.com/in/santiago-e-gonzalez</a></dd>
-							<dt>GitHub</dt>
-								<dd><a href="https://github.com/SantiagoEnriqueGA/">github.com/SantiagoEnriqueGA</a></dd>
-						</dl>
-					</section>
-					<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-				</footer>
-
+				</section>
 			</div>
 
+			<!-- Footer -->
+			<footer id="footer">
+				<section>
+					<h2>Contact Me</h2>
+					<dl class="alt">
+						<dt>Phone</dt>
+							<dd>(832) 296-3193</dd>
+						<dt>Email</dt>
+							<dd><a href="sega97@gmail.com">sega97@gmail.com</a></dd>
+						<dt>LinkedIn</dt>
+							<dd><a href="https://www.linkedin.com/in/santiago-e-gonzalez/">linkedin.com/in/santiago-e-gonzalez</a></dd>
+						<dt>GitHub</dt>
+							<dd><a href="https://github.com/SantiagoEnriqueGA/">github.com/SantiagoEnriqueGA</a></dd>
+					</dl>
+				</section>
+				<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+			</footer>
+
+		</div>
+
 		<!-- Scripts -->
-			<script>window.onload = function() {document.body.style.zoom = "75%";}</script>
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script>window.onload = function() {document.body.style.zoom = "75%";}</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>

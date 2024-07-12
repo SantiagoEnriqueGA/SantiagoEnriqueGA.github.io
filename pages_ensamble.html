@@ -16,44 +16,79 @@
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<h1>Custom Ensemble Learning</h1>
-						<p>An educational project focusing on building ensemble learning algorithms from scratch</p>
-					</header>
+			<!-- Header -->
+			<header id="header">
+				<h1>Custom Ensemble Learning Project</h1>
+				<p>An educational project focusing on building ensemble learning algorithms from scratch</p>
+			</header>
 
-				<!-- Main -->
-					<div id="main">
-
-						<!-- Content -->
-						<section id="content" class="main">
-							<h2>Goal</h2>
+			<!-- Main -->
+			<div id="main">
+				<!-- Content -->
+				<section id="intro" class="main">
+					<div class="spotlight">
+						<div class="content">
+							<header class="major">
+								<h2>Goal</h2>
+							</header>
 							<p>This project is primarily educational, aiming to understand various ensemble learning algorithms by implementing them from scratch using numpy for array processing and custom datasets.</p>
 
-							<h2>Overview</h2>
+							<header class="major">
+								<h2>Overview</h2>
+							</header>
 							<p>This project includes implementations of custom random forest classifiers and regressors, as well as a gradient boosted decision tree regressor.</p>
 
-							<h2>Main Python Files</h2>
+							<header class="major">
+								<h2>Main Python Files</h2>
+							</header>
 							<ul>
 								<li><a href="dataPrep.py">dataPrep.py</a>: Contains functions for data preparation and one-hot encoding</li>
 								<li><a href="decisionTreeClassifier.py">decisionTreeClassifier.py</a>: Implements a decision tree classifier</li>
 								<li><a href="decisionTreeRegressor.py">decisionTreeRegressor.py</a>: Implements a decision tree regressor</li>
 								<li><a href="randomForestClassifier.py">randomForestClassifier.py</a>: Implements a custom random forest classifier</li>
+								<li><a href="randomForestClassifierPar.py">randomForestClassifierPar.py</a>: Updated randomForestClassifier.py to implemented with multiprocessing for performance gain.</li>
 								<li><a href="randomForestRegressor.py">randomForestRegressor.py</a>: Implements a custom random forest regressor</li>
 								<li><a href="gradientBoostedRegressor.py">gradientBoostedRegressor.py</a>: Implements a gradient boosted decision tree regressor</li>
 								<li><a href="runRandomForest.py">runRandomForest.py</a>: Functions to run random forest on various datasets</li>
 							</ul>
 
-							<h2>Included CSV Files</h2>
+							<header class="major">
+								<h2>Included CSV Files</h2>
+							</header>
 							<ul>
 								<li>Wisconsin_breast_prognostic.csv: Dataset for Wisconsin Breast Prognostic analysis</li>
 								<li>pima-indians-diabetes.csv: Dataset for Pima Indians Diabetes analysis</li>
 								<li>output_May-06-2024_cleaned.csv: Car listing data from "used_car_price_visualization" repository</li>
 							</ul>
 							
-							<h2>Usage Example</h2>
+							<header class="major">
+								<h2>Example Results</h2>
+							</header>
+							<a href="https://raw.githubusercontent.com/SantiagoEnriqueGA/custom_ensemble_learning/main/vis/randomForestCarsReg_R2.png" target="_blank">
+								<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/custom_ensemble_learning/main/vis/randomForestCarsReg_R2.png" alt="randomForest Cars Regression R2" style="width:75%">
+							</a>
+							
+							<a href="https://raw.githubusercontent.com/SantiagoEnriqueGA/custom_ensemble_learning/main/vis/randomForestCarsReg_MSE.png" target="_blank">
+								<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/custom_ensemble_learning/main/vis/randomForestCarsReg_MSE.png" alt="randomForest Cars Regression MSE" style="width:75%">
+							</a>
+							
+							<header class="major">
+								<h2>Multiprocessing Performance Gain</h2>
+							</header>
+							
+							<h2>randomForestClassifierPar vs randomForestClassifier</h2>
+							<a href="https://raw.githubusercontent.com/SantiagoEnriqueGA/custom_ensemble_learning/main/vis/randomForestClassifier_time.png" target="_blank">
+								<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/custom_ensemble_learning/main/vis/randomForestClassifier_time.png" alt="randomForestClassifierPar vs randomForestClassifier" style="width:75%">
+							</a>
+							
+							
+							
+
+							<header class="major">
+								<h2>Usage Example</h2>
+							</header>
 							<p>This <code>run</code> function in <code>gradientBoostedRegressor.py</code> demonstrates how to prepare data, train the model, and evaluate its performance:</p>
 							<pre><code class="language-python">
 def run():
@@ -82,7 +117,9 @@ if __name__ == "__main__":
 	run()
 							</code></pre>
 							
-							<h2>dataPrep.py</h2>
+							<header class="major">
+								<h2>dataPrep.py</h2>
+							</header>
 							<h3>Class: DataPrep</h3>
 							<ul>
 								<li>one_hot_encode(df, cols): One-hot encodes non-numerical columns in a DataFrame</li>
@@ -90,7 +127,9 @@ if __name__ == "__main__":
 								<li>prepare_data(csv_file, label_col_index, cols_to_encode=[], write_to_csv=True): Prepares data by loading a CSV file, one-hot encoding non-numerical columns, and optionally writing prepared data to a new CSV file</li>
 							</ul>
 
-							<h2>decisionTreeClassifier.py</h2>
+							<header class="major">
+								<h2>decisionTreeClassifier.py</h2>
+							</header>
 							<h3>Classes: Utility, DecisionTree, DecisionTreeWithInfoGain</h3>
 							<ul>
 								<li>Utility: Utility class for computing entropy, partitioning classes, and calculating information gain</li>
@@ -98,14 +137,18 @@ if __name__ == "__main__":
 								<li>DecisionTreeWithInfoGain: Extends DecisionTree to use information gain for splitting</li>
 							</ul>
 
-							<h2>decisionTreeRegressor.py</h2>
+							<header class="major">
+								<h2>decisionTreeRegressor.py</h2>
+							</header>
 							<h3>Classes: Utility, DecisionTreeRegressor</h3>
 							<ul>
 								<li>Utility: Utility class for computing variance, partitioning classes, and calculating information gain</li>
 								<li>DecisionTreeRegressor: Decision tree for regression tasks</li>
 							</ul>
 
-							<h2>randomForestClassifier.py</h2>
+							<header class="major">
+								<h2>randomForestClassifier.py | randomForestClassifierPar.py</h2>
+							</header>
 							<h3>Classes: RandomForest, RandomForestWithInfoGain, runRandomForest</h3>
 							<ul>
 								<li>RandomForest: Custom random forest classifier with bootstrapping and voting mechanisms</li>
@@ -113,14 +156,18 @@ if __name__ == "__main__":
 								<li>runRandomForest: Functions to run the random forest classifier</li>
 							</ul>
 
-							<h2>randomForestRegressor.py</h2>
+							<header class="major">
+								<h2>randomForestRegressor.py</h2>
+							</header>
 							<h3>Classes: RandomForest, runRandomForest</h3>
 							<ul>
 								<li>RandomForest: Custom random forest regressor with bootstrapping and aggregation mechanisms</li>
 								<li>runRandomForest: Functions to run the random forest regressor</li>
 							</ul>
 
-							<h2>gradientBoostedRegressor.py</h2>
+							<header class="major">
+								<h2>gradientBoostedRegressor.py</h2>
+							</header>
 							<h3>Class: gradientBoostedRegressor</h3>
 							<ul>
 								<li>gradientBoostedRegressor: Gradient boosted decision tree regressor for regression tasks</li>
@@ -129,10 +176,11 @@ if __name__ == "__main__":
 								<li>Example Usage: run function to prepare data, train the model, and evaluate performance</li>
 							</ul>
 
-							<h2>runRandomForest.py</h2>
+							<header class="major">
+								<h2>runRandomForest.py</h2>
+							</header>
 							<p>Functions to run custom random forest classifier and regressor on various datasets.</p>
 						</section>
-
 					</div>
 
 				<!-- Footer -->
@@ -152,7 +200,6 @@ if __name__ == "__main__":
 					</section>
 					<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 				</footer>
-
 			</div>
 
 		<!-- Scripts -->

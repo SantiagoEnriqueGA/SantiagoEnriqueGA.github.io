@@ -21,33 +21,61 @@
 			<!-- Header -->
 			<header id="header">
 				<h1>Custom Clustering Project</h1>
-				<p>An educational project focusing on building clustering  algorithms from scratch</p>
+				<p>An educational project focusing on building clustering algorithms from scratch</p>
 			</header>
 
-				<!-- Main -->
-					<div id="main">
+			<!-- Main -->
+			<div id="main">
+				<!-- Content -->
+				<section id="intro" class="main">
+					<div class="spotlight">
+						<div class="content">
+							<header class="major">
+								<h2>Goal</h2>
+							</header>
+							<p>This project is primarily educational. It focuses on understanding clustering algorithms by implementing them from scratch using numpy for array processing and custom datasets.</p>
 
-						<!-- Content -->
-				<section id="content" class="main">
-					<h2>Goal</h2>
-					<p>This project is primarily educational. It focuses on understanding clustering algorithms by implementing them from scratch using numpy for array processing and custom datasets.</p>
+							<header class="major">
+								<h2>Project Files</h2>
+							</header>
+							<ul>
+								<li><strong>clustering.py</strong>: Custom implementations of KMeans and DBSCAN algorithms.</li>
+								<li><strong>MallCustomerSegmentation.ipynb</strong>: Customer segmentation analysis using Mall Customers dataset.</li>
+								<li><strong>clustering_exampleUsage.ipynb</strong>: Example usage of custom KMeans and DBSCAN on synthetic data.</li>
+							</ul>
 
-					<h2>Project Files</h2>
-					<ul>
-						<li><strong>clustering.py</strong>: Custom implementations of KMeans and DBSCAN algorithms.</li>
-						<li><strong>MallCustomerSegmentation.ipynb</strong>: Customer segmentation analysis using Mall Customers dataset.</li>
-						<li><strong>clustering_exampleUsage.ipynb</strong>: Example usage of custom KMeans and DBSCAN on synthetic data.</li>
-					</ul>
+							<header class="major">
+								<h2>Additional Information on Evaluation Metrics</h2>
+							</header>
+							<ul>
+								<li><strong>Silhouette Score</strong>: Measures how similar an object is to its own cluster compared to other clusters.</li>
+								<li><strong>Davies-Bouldin Index</strong>: Measures the average similarity between each cluster and its most similar cluster.</li>
+								<li><strong>Calinski-Harabasz Index</strong>: Measures how well separated the clusters are from each other.</li>
+							</ul>
 
-					<h2>Additional Information on Evaluation Metrics</h2>
-					<ul>
-						<li><strong>Silhouette Score</strong>: Measures how similar an object is to its own cluster compared to other clusters.</li>
-						<li><strong>Davies-Bouldin Index</strong>: Measures the average similarity between each cluster and its most similar cluster.</li>
-						<li><strong>Calinski-Harabasz Index</strong>: Measures how well separated the clusters are from each other.</li>
-					</ul>
+							<header class="major">
+								<h2>Visualized Examples</h2>
+							</header>
+	
+							<h2>KMeans Evaluation Methods</h2>
+							<a href="https://raw.githubusercontent.com/SantiagoEnriqueGA/custom_clustering/main/vis/KMeans_eval.png" target="_blank">
+								<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/custom_clustering/main/vis/KMeans_eval.png" alt="KMeans Evaluation Methods" style="width:75%">
+							</a>
 
-					<h2>Usage Example</h2>
-					<pre><code class="language-python"># Example usage:
+							<h2>KMeans Labeled vs True</h2>
+							<a href="https://raw.githubusercontent.com/SantiagoEnriqueGA/custom_clustering/main/vis/KMeans_blobs.png" target="_blank">
+								<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/custom_clustering/main/vis/KMeans_blobs.png" alt="KMeans Labeled vs True" style="width:75%">
+							</a>
+
+							<h2>DBSCAN Labeled vs Noise</h2>
+							<a href="https://raw.githubusercontent.com/SantiagoEnriqueGA/custom_clustering/main/vis/DBSCAN_blobs.png" target="_blank">
+								<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/custom_clustering/main/vis/DBSCAN_blobs.png" alt="DBSCAN Labeled vs Noise" style="width:75%">
+							</a>
+
+							<header class="major">
+								<h2>Usage Example</h2>
+							</header>
+							<pre><code class="language-python"># Example usage:
 from sklearn.datasets import make_blobs
 import matplotlib.pyplot as plt
 
@@ -97,29 +125,29 @@ plt.tight_layout()
 plt.show()
 </code></pre>
 
-				</section>
-
+						</div>
 					</div>
-
-				<!-- Footer -->
-				<footer id="footer">
-					<section>
-						<h2>Contact Me</h2>
-						<dl class="alt">
-							<dt>Phone</dt>
-								<dd>(832) 296-3193</dd>
-							<dt>Email</dt>
-								<dd><a href="sega97@gmail.com">sega97@gmail.com</a></dd>
-							<dt>LinkedIn</dt>
-								<dd><a href="https://www.linkedin.com/in/santiago-e-gonzalez/">linkedin.com/in/santiago-e-gonzalez</a></dd>
-							<dt>GitHub</dt>
-								<dd><a href="https://github.com/SantiagoEnriqueGA/">github.com/SantiagoEnriqueGA</a></dd>
-						</dl>
-					</section>
-					<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-				</footer>
-
+				</section>
 			</div>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<section>
+					<h2>Contact Me</h2>
+					<dl class="alt">
+						<dt>Phone</dt>
+							<dd>(832) 296-3193</dd>
+						<dt>Email</dt>
+							<dd><a href="sega97@gmail.com">sega97@gmail.com</a></dd>
+						<dt>LinkedIn</dt>
+							<dd><a href="https://www.linkedin.com/in/santiago-e-gonzalez/">linkedin.com/in/santiago-e-gonzalez</a></dd>
+						<dt>GitHub</dt>
+							<dd><a href="https://github.com/SantiagoEnriqueGA/">github.com/SantiagoEnriqueGA</a></dd>
+					</dl>
+				</section>
+				<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+			</footer>
+		</div>
 
 		<!-- Scripts -->
 		<script>window.onload = function() {document.body.style.zoom = "75%";}</script>
@@ -132,6 +160,5 @@ plt.show()
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/autoloader/prism-autoloader.min.js"></script>
 		<script src="assets/js/main.js"></script>
-
 	</body>
 </html>

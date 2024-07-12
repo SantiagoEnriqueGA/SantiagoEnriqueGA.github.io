@@ -15,29 +15,39 @@
 	<body class="is-preload">
 
 		<!-- Wrapper -->
-			<div id="wrapper">
+		<div id="wrapper">
 
-				<!-- Header -->
-					<header id="header">
-						<h1>Conway's Game of Life</h1>
-						<p>Simulating cellular automata with Pygame and Numpy</p>
-					</header>
+			<!-- Header -->
+			<header id="header">
+				<h1>Conway's Game of Life</h1>
+				<p>Simulating cellular automata with Pygame and Numpy</p>
+			</header>
 
-				<!-- Main -->
-					<div id="main">
+			<!-- Main -->
+			<div id="main">
+				<!-- Content -->
+				<section id="intro" class="main">
+					<div class="spotlight">
+						<div class="content">
+							<header class="major">
+								<h2>Overview</h2>
+							</header>
+							<p>The game simulates cellular automata where cells evolve based on simple rules. This begann as a personal project to code Conway's Game of Life in Python using Pygame for graphics and Numpy for array operations. <br><br>
+								Later this project was extended as part of my master's course ISYE 6644: Simulation and Modeling for Engineering and Science. The goal of which was to explore the performance metrics of the simulation.
+								You can view the final report here: <a href="assets/other/SEGA_ISYE6644_DRAFT_06.19.2024.pdf">DRAFT REPORT</a>
+							</p>
 
-						<!-- Content -->
-						<section id="content" class="main">
-							<h2>Overview</h2>
-							<p>This repository contains Python code for Conway's Game of Life implemented using Pygame for graphics and Numpy for array operations. The game simulates cellular automata where cells evolve based on simple rules.</p>
-
-							<h2>Files</h2>
+							<header class="major">
+								<h2>Files</h2>
+							</header>
 							<ul>
 								<li><code>gameOfLife_v1.py</code> to <code>gameOfLife_v5.py</code>: Different versions of the Game of Life implementation, with version 5 being the latest.</li>
 								<li><code>glider.csv</code> and <code>gliders.csv</code>: CSV files storing starting configurations for one and two Gosper's glider guns, respectively.</li>
 							</ul>
 
-							<h2>Version History</h2>
+							<header class="major">
+								<h2>Version History</h2>
+							</header>
 							<ul>
 								<li><strong>V1:</strong> Initial implementation.</li>
 								<li><strong>V2:</strong> Updated to use Numpy array operations.</li>
@@ -46,11 +56,15 @@
 								<li><strong>V5:</strong> Improved user interaction, added restart feature, and implemented clock speed control.</li>
 							</ul>
 
-							<h2>Running the Game</h2>
+							<header class="major">
+								<h2>Running the Game</h2>
+							</header>
 							<p>To run the game, execute the appropriate version file (<code>gameOfLife_v5.py</code> for the latest version) using Python. Ensure you have Pygame and Numpy installed.</p>
 							<pre><code>python gameOfLife_v5.py</code></pre>
 
-							<h2>Game Controls</h2>
+							<header class="major">
+								<h2>Game Controls</h2>
+							</header>
 							<ul>
 								<li><strong>Up Arrow:</strong> Increase game speed.</li>
 								<li><strong>Down Arrow:</strong> Decrease game speed.</li>
@@ -60,45 +74,62 @@
 								<li><strong>Escape:</strong> Quit the game.</li>
 							</ul>
 
-							<h2>Screenshots</h2>
-							<img src="https://github.com/SantiagoEnriqueGA/gameOfLife/assets/50879742/c4f814f8-37d1-46ca-9d7d-70d1b52092a5" alt="Screenshot 1" style="max-width: 100%; height: auto;">
-							<img src="https://github.com/SantiagoEnriqueGA/gameOfLife/assets/50879742/f1ac1cf0-baf6-4df0-aeb3-673d5bf62ef1" alt="Screenshot 2" style="max-width: 100%; height: auto;">
-							<img src="https://github.com/SantiagoEnriqueGA/gameOfLife/assets/50879742/6cd879a5-dd13-4208-92b6-18ad84251a85" alt="Screenshot 3" style="max-width: 100%; height: auto;">
-							<img src="https://github.com/SantiagoEnriqueGA/gameOfLife/assets/50879742/76eff2ca-8648-4d42-9500-d9d1376f8198" alt="Screenshot 4" style="max-width: 100%; height: auto;">
+							<header class="major">
+								<h2>Screenshots</h2>
+							</header>
+							<div class="row">
+								<div class="column">
+									<a href="https://github.com/SantiagoEnriqueGA/gameOfLife/assets/50879742/c4f814f8-37d1-46ca-9d7d-70d1b52092a5" target="_blank">
+										<img src="https://github.com/SantiagoEnriqueGA/gameOfLife/assets/50879742/c4f814f8-37d1-46ca-9d7d-70d1b52092a5" alt="Screenshot 1" style="width:100%"></a>
+								</div>
+								<div class="column">
+									<a href="https://github.com/SantiagoEnriqueGA/gameOfLife/assets/50879742/f1ac1cf0-baf6-4df0-aeb3-673d5bf62ef1" target="_blank">
+										<img src="https://github.com/SantiagoEnriqueGA/gameOfLife/assets/50879742/f1ac1cf0-baf6-4df0-aeb3-673d5bf62ef1" alt="Screenshot 2" style="width:100%"></a>
+								</div>
+								<div class="column">
+									<a href="https://github.com/SantiagoEnriqueGA/gameOfLife/assets/50879742/6cd879a5-dd13-4208-92b6-18ad84251a85" target="_blank">
+										<img src="https://github.com/SantiagoEnriqueGA/gameOfLife/assets/50879742/6cd879a5-dd13-4208-92b6-18ad84251a85" alt="Screenshot 3" style="width:100%"></a>
+								</div>
+								<div class="column">
+									<a href="https://github.com/SantiagoEnriqueGA/gameOfLife/assets/50879742/76eff2ca-8648-4d42-9500-d9d1376f8198" target="_blank">
+										<img src="https://github.com/SantiagoEnriqueGA/gameOfLife/assets/50879742/76eff2ca-8648-4d42-9500-d9d1376f8198" alt="Screenshot 4" style="width:100%"></a>
+								</div>
+							</div>
 
-						</section>
-
+						</div>
 					</div>
-
-				<!-- Footer -->
-				<footer id="footer">
-					<section>
-						<h2>Contact Me</h2>
-						<dl class="alt">
-							<dt>Phone</dt>
-								<dd>(832) 296-3193</dd>
-							<dt>Email</dt>
-								<dd><a href="sega97@gmail.com">sega97@gmail.com</a></dd>
-							<dt>LinkedIn</dt>
-								<dd><a href="https://www.linkedin.com/in/santiago-e-gonzalez/">linkedin.com/in/santiago-e-gonzalez</a></dd>
-							<dt>GitHub</dt>
-								<dd><a href="https://github.com/SantiagoEnriqueGA/">github.com/SantiagoEnriqueGA</a></dd>
-						</dl>
-					</section>
-					<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
-				</footer>
-
+				</section>
 			</div>
 
+			<!-- Footer -->
+			<footer id="footer">
+				<section>
+					<h2>Contact Me</h2>
+					<dl class="alt">
+						<dt>Phone</dt>
+							<dd>(832) 296-3193</dd>
+						<dt>Email</dt>
+							<dd><a href="sega97@gmail.com">sega97@gmail.com</a></dd>
+						<dt>LinkedIn</dt>
+							<dd><a href="https://www.linkedin.com/in/santiago-e-gonzalez/">linkedin.com/in/santiago-e-gonzalez</a></dd>
+						<dt>GitHub</dt>
+							<dd><a href="https://github.com/SantiagoEnriqueGA/">github.com/SantiagoEnriqueGA</a></dd>
+					</dl>
+				</section>
+				<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+			</footer>
+
+		</div>
+
 		<!-- Scripts -->
-			<script>window.onload = function() {document.body.style.zoom = "75%";}</script>
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script>window.onload = function() {document.body.style.zoom = "75%";}</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
