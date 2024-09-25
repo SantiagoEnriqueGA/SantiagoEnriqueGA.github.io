@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<!--
+    Stellar by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>One Billion Row Challenge</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <h1>One Billion Row Challenge</h1>
+                <p>An exploration of modern data processing capabilities with temperature data aggregation</p>
+            </header>
+
+            <!-- Main -->
+            <div id="main">
+                <!-- Content -->
+                <section id="intro" class="main">
+                    <div class="spotlight">
+                        <div class="content">
+                            <header class="major">
+                                <h2>Goal</h2>
+                            </header>
+                            <p>This project implements the One Billion Row Challenge using Python, focusing on optimizing performance with various libraries and techniques. The goal is to aggregate temperature data from one billion rows and compute minimum, mean, and maximum temperature values per weather station.</p>
+
+                            <header class="major">
+                                <h2>Overview</h2>
+                            </header>
+                            <p>The task is to read a text file containing temperature measurements for different weather stations and compute the statistics (min/mean/max) for each station. The output is presented in a sorted format, as shown in the project description.</p>
+
+                            <header class="major">
+                                <h2>Project Structure</h2>
+                            </header>
+                            <ul>
+                                <li><strong>solutions/</strong>: Contains different implementations of the challenge using various libraries and techniques.</li>
+                                <li><strong>timeAndCompare.py</strong>: Runs different implementations and compares the average performance of each run.</li>
+                            </ul>
+
+                            <header class="major">
+                                <h2>Performance Results</h2>
+                            </header>
+                            <p>The following chart demonstrates the performance comparison of different implementations. All tests were conducted on a Windows 10 system with an AMD Ryzen 9 4900HS @ 3.00 GHz and 16.0 GB RAM.</p>
+                            
+							<a href="images/obrc_timeVisualized.png" target="_blank">
+								<img src="images/obrc_timeVisualized.png" alt="Performance Comparison" style="width:100%">
+							</a>
+
+                            <header class="major">
+                                <h2>Analysis of Results</h2>
+                            </header>
+                            <p><strong>Single-threaded Performance:</strong> The single-core Python implementation took over 659 seconds, highlighting the limitations of sequential processing. Using PyPy, the runtime was cut to 313 seconds due to JIT compilation.</p>
+                            <p><strong>Optimized Libraries:</strong> Pandas-based implementations showed performance improvements, but they still left significant room for optimization, with runtimes of 479 seconds (PyPy) and 347 seconds (CPython).</p>
+                            <p><strong>Concurrent Processing:</strong> Utilizing multiprocessing reduced execution time significantly. The multiprocessing implementation in Python took 119 seconds, while a concurrent implementation achieved 114 seconds.</p>
+                            <p><strong>Big Data Frameworks:</strong> Frameworks like Dask and PySpark demonstrated powerful performance optimizations, with Dask completing in just 41.5 seconds and PySpark in 74 seconds.</p>
+                            <p><strong>High-performance Libraries:</strong> Polars and DuckDB provided the best performance, with Polars (PyPy) taking 26.8 seconds and DuckDB completing in an impressive 20.7 seconds.</p>
+
+                            <header class="major">
+                                <h2>Conclusion</h2>
+                            </header>
+                            <p>This challenge emphasizes the importance of selecting the right tools when working with massive datasets. By utilizing parallel processing and optimized libraries, the performance improved dramatically, making it feasible to process billions of rows efficiently.</p>
+                        </div>
+                    </div>
+
+                    <footer id="footer">
+                        <section>
+                            <h2>Contact Me</h2>
+                            <dl class="alt">
+                                <dt>Phone</dt>
+                                    <dd>(832) 296-3193</dd>
+                                <dt>Email</dt>
+                                    <dd><a href="mailto:sega97@gmail.com">sega97@gmail.com</a></dd>
+                                <dt>LinkedIn</dt>
+                                    <dd><a href="https://www.linkedin.com/in/santiago-e-gonzalez/">linkedin.com/in/santiago-e-gonzalez</a></dd>
+                                <dt>GitHub</dt>
+                                    <dd><a href="https://github.com/SantiagoEnriqueGA/">github.com/SantiagoEnriqueGA</a></dd>
+                            </dl>
+                        </section>
+                        <p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+                    </footer>
+                </section>
+            </div>
+
+        <!-- Scripts -->
+        <script>window.onload = function() {document.body.style.zoom = "75%";}</script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/autoloader/prism-autoloader.min.js"></script>
+        <script src="assets/js/main.js"></script>
+
+    </body>
+</html>
