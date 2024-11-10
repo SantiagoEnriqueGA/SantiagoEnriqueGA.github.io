@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Custom Neural Network Project</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<h1>Custom Neural Network Project</h1>
+				<p>A project to build and train neural networks using only Python and NumPy.</p>
+			</header>
+
+			<!-- Main -->
+			<div id="main">
+				<!-- Content -->
+				<section id="intro" class="main">
+					<div class="spotlight">
+						<div class="content">
+							<header class="major">
+								<h2>Goal</h2>
+							</header>
+							<p>This project implements a fully customizable neural network using just Python and NumPy. It supports various features like multiple layers, different activation functions, various optimization functions, cross-entropy loss, binary classification, dropout, and L2 regularization.</p>
+							<p>The project aims to demonstrate how neural networks can be built and trained using only core Python libraries, without relying on high-level frameworks like TensorFlow or PyTorch. By doing this, you gain deeper insight into the underlying mechanisms of backpropagation, gradient descent, and optimization algorithms.</p>
+
+							<header class="major">
+								<h2>ml_utils.py</h2>
+							</header>
+							<p>This module provides custom implementations of neural network utilities, including clustering algorithms, optimizers, and loss functions.</p>
+
+							<h3>Classes</h3>
+							<ul>
+								<li><strong>AdamOptimizer</strong>: Implements the Adam optimization algorithm for training neural networks. It includes parameters such as learning rate, beta values for moment estimates, and a regularization parameter.</li>
+								<li><strong>CrossEntropyLoss</strong>: Custom implementation of the cross-entropy loss for multi-class classification, calculated using the formula:<br>
+									<code>Loss = - (1/m) * Σ (y * log(p) + (1 - y) * log(1 - p))</code><br>
+									where <code>m</code> is the number of samples.
+								</li>
+								<li><strong>BCEWithLogitsLoss</strong>: Custom binary cross-entropy loss implementation with logits. It calculates loss using the formula:<br>
+									<code>Loss = -mean(y * log(p) + (1 - y) * log(1 - p))</code><br>
+									This class applies the sigmoid function to logits to obtain probabilities.
+								</li>
+								<li><strong>NeuralNetwork</strong>: A class for training and evaluating a custom neural network model. Key features include:
+									<ul>
+										<li>Supports multiple layers with customizable sizes and activation functions.</li>
+										<li>Implements forward and backward propagation.</li>
+										<li>Supports dropout regularization and L2 regularization.</li>
+										<li>Includes a method for training with mini-batch gradient descent, along with early stopping.</li>
+										<li>Provides functionality for hyperparameter tuning via grid search.</li>
+										<li>Evaluates model performance on training and test data.</li>
+									</ul>
+								</li>
+								<li><strong>Layer</strong>: Represents a single layer in the neural network. Contains attributes for <code>weights</code>, <code>biases</code>, <code>activation_function</code>, and <code>gradients</code>.
+									<ul>
+										<li><strong>Methods:</strong></li>
+										<li><code>activate(Z)</code>: Applies the specified activation function.</li>
+										<li><code>activation_derivative(Z)</code>: Returns the derivative of the activation function for backpropagation.</li>
+									</ul>
+								</li>
+								<li><strong>Activation</strong>: Contains static methods for various activation functions and their derivatives.
+									<ul>
+										<li><code>relu(z)</code>, <code>relu_derivative(z)</code>: ReLU activation and its derivative.</li>
+										<li><code>leaky_relu(z, alpha)</code>, <code>leaky_relu_derivative(z, alpha)</code>: Leaky ReLU activation and its derivative.</li>
+										<li><code>tanh(z)</code>, <code>tanh_derivative(z)</code>: Tanh activation and its derivative.</li>
+										<li><code>sigmoid(z)</code>, <code>sigmoid_derivative(z)</code>: Sigmoid activation and its derivative.</li>
+										<li><code>softmax(z)</code>: Softmax activation function.</li>
+									</ul>
+								</li>
+							</ul>
+
+							<header class="major">
+								<h2>Testing Functions</h2>
+							</header>
+							<ul>
+								<li><strong>test_breast_cancer()</strong>: Evaluates the network on the Breast Cancer dataset, providing accuracy and classification metrics.</li>
+								<li><strong>test_iris()</strong>: Evaluates the network on the Iris dataset, offering similar metrics for model performance.</li>
+							</ul>
+
+							<header class="major">
+								<h2>Example Usage</h2>
+							</header>
+							<pre><code class="language-python"># Example usage:
+from ml_utils import NeuralNetwork, AdamOptimizer
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+
+# Load dataset and prepare data
+data = load_iris()
+X, y = data.data, data.target
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Standardize features
+scaler = StandardScaler()
+X_train = scaler.fit_transform(X_train)
+X_test = scaler.transform(X_test)
+
+# Initialize neural network and optimizer
+network = NeuralNetwork(layers=[...], activations=[...])
+optimizer = AdamOptimizer(network=network)
+
+# Train and evaluate
+optimizer.train(X_train, y_train)
+predictions = network.predict(X_test)
+print(predictions)</code></pre>
+
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<section>
+					<h2>Contact Me</h2>
+					<dl class="alt">
+						<dt>Phone</dt>
+							<dd>(832) 296-3193</dd>
+						<dt>Email</dt>
+							<dd><a href="mailto:sega97@gmail.com">sega97@gmail.com</a></dd>
+						<dt>LinkedIn</dt>
+							<dd><a href="https://www.linkedin.com/in/santiago-e-gonzalez/">linkedin.com/in/santiago-e-gonzalez</a></dd>
+						<dt>GitHub</dt>
+							<dd><a href="https://github.com/SantiagoEnriqueGA/">github.com/SantiagoEnriqueGA</a></dd>
+					</dl>
+				</section>
+				<p class="copyright">&copy; 2024. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+			</footer>
+		</div>
+
+		<!-- Scripts -->
+		<script>window.onload = function() {document.body.style.zoom = "75%";}</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/autoloader/prism-autoloader.min.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
