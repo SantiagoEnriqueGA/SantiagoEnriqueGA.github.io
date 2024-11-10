@@ -80,6 +80,56 @@
                             </a>
 
                             <header class="major">
+                                <h2>Algorithms Implemented</h2>
+                            </header>
+                            <ol>
+                                <li>Breadth-First Search (BFS)</li>
+                                <li>Depth-First Search (DFS)</li>
+                                <li>A* Search (with four heuristics: Manhattan, Euclidean, Chebyshev, and Octile)</li>
+                                <li>Greedy Best-First Search</li>
+                                <li>Dijkstra</li>
+                                <li>Bidirectional Search</li>
+                            </ol>
+
+                            <header class="major">
+                                <h2>Algorithms Explained</h2>
+                            </header>
+
+                            <h3>1. Breadth-First Search (BFS)</h3>
+                            <p>Breadth-First Search is an algorithm that explores all the nodes at the present depth level before moving on to the nodes at the next depth level. It uses a queue to keep track of the nodes to be explored next. The implementation can be found in the <code><a href="path_finder.py">bfs</a></code> function.</p>
+
+                            <h3>2. Depth-First Search (DFS)</h3>
+                            <p>Depth-First Search is an algorithm that explores as far as possible along each branch before backtracking. It uses a stack (or recursion) to keep track of the nodes to be explored next. The implementation can be found in the <code><a href="path_finder.py">dfs</a></code> function.</p>
+
+                            <h3>3. A* Search</h3>
+                            <p>A* Search is an algorithm that finds the shortest path by combining the cost to reach the current node and a heuristic estimate of the cost to reach the goal. It uses a priority queue to expand the node with the lowest combined cost. The implementation can be found in the <code><a href="path_finder.py">a_star</a></code> function.</p>
+
+                            <h3>4. Greedy Best-First Search (GBFS)</h3>
+                            <p>GBFS is an algorithm that expands the most promising node chosen according to a specified rule. It uses a heuristic to estimate the cost to reach the goal from the current node and always expands the node with the lowest estimated cost. The implementation can be found in the <code><a href="path_finder.py">gbfs</a></code> function.</p>
+
+                            <h3>5. Dijkstra's Algorithm</h3>
+                            <p>Dijkstra's Algorithm finds the shortest path from the start position to the end position in a weighted graph. It uses a priority queue to explore the node with the lowest cost first and updates the cost of reaching its neighbors. The implementation can be found in the <code><a href="path_finder.py">dijkstra</a></code> function.</p>
+
+                            <h3>6. Bidirectional Search</h3>
+                            <p>Bidirectional Search is an algorithm that simultaneously searches from the start and end positions until the two searches meet. This can significantly reduce the search space and time compared to unidirectional search. The implementation can be found in the <code><a href="path_finder.py">bidirectional</a></code> function.</p>
+
+                            <header class="major">
+                                <h2>Heuristics</h2>
+                            </header>
+                            <h3>1. Manhattan Distance</h3>
+                            <p>The Manhattan distance between two points is the sum of the absolute differences of their Cartesian coordinates. It is used in grid-based path finding where movement is restricted to horizontal and vertical directions. The implementation can be found in the <code><a href="path_finder.py">heuristic</a></code> function with the type "manhattan".</p>
+
+                            <h3>2. Euclidean Distance</h3>
+                            <p>The Euclidean distance between two points is the straight-line distance between them. It is used in scenarios where movement can occur in any direction. The implementation can be found in the <code><a href="path_finder.py">heuristic</a></code> function with the type "euclidean".</p>
+
+                            <h3>3. Chebyshev Distance</h3>
+                            <p>The Chebyshev distance between two points is the maximum of the absolute differences of their Cartesian coordinates. It is used in grid-based path finding where movement can occur in any direction, including diagonally. The implementation can be found in the <code><a href="path_finder.py">heuristic</a></code> function with the type "chebyshev".</p>
+
+                            <h3>4. Octile Distance</h3>
+                            <p>The Octile distance is a combination of Manhattan and diagonal distances. It is used in grid-based path finding where diagonal movement is allowed but has a different cost than horizontal and vertical movement. The implementation can be found in the <code><a href="path_finder.py">heuristic</a></code> function with the type "octile".</p>
+
+                            
+                            <header class="major">
                                 <h2>Usage</h2>
                             </header>
                             <h3>2D Pathfinding</h3>
