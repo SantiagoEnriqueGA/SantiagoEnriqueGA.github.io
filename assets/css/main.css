@@ -99,11 +99,11 @@ input, select, textarea {
 	}
 
 	body {
-		background-color: #935d8c;
-		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
-		background-image: url("images/overlay.png"), linear-gradient(45deg, #e37682 15%, #5f4d93 85%);
+		background-color: #5e4d936e;
+		background-image: url("images/overlay.png"), -moz-linear-gradient(45deg, #e376832c 15%, #0000006e 85%);
+		background-image: url("images/overlay.png"), -webkit-linear-gradient(45deg, #e376832c 15%, #0000006e 85%);
+		background-image: url("images/overlay.png"), -ms-linear-gradient(45deg, #e376832c 15%, #0000006e 85%);
+		background-image: url("images/overlay.png"), linear-gradient(45deg, #e376832c 15%, #0000006e 85%);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -120,7 +120,7 @@ input, select, textarea {
 /* Type */
 
 	body {
-		background-color: #935d8c;
+		background-color: #7b7b7b6e;
 		color: rgba(255, 255, 255, 0.65);
 	}
 
@@ -198,6 +198,9 @@ input, select, textarea {
 		line-height: 1.5;
 		margin: 0 0 0.7em 0;
 		letter-spacing: -0.025em;
+		color: #ffffff;
+		text-shadow: 0.05em 0.05em 0.15em rgba(0, 0, 0, 0.5);
+		font-weight: 400;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -2886,26 +2889,26 @@ input, select, textarea {
 			color: #ffffff;
 			text-align: center;
 		}
-
-			.statistics li.style1 {
-				background-color: #efa8b0;
-			}
-
-			.statistics li.style2 {
-				background-color: #c79cc8;
-			}
-
-			.statistics li.style3 {
-				background-color: #a89cc8;
-			}
-
-			.statistics li.style4 {
-				background-color: #9bb2e1;
-			}
-
-			.statistics li.style5 {
-				background-color: #8cc9f0;
-			}
+		.statistics li.style1 {
+			background-color: #b25a63;
+		}
+		
+		.statistics li.style2 {
+			background-color: #915a9c; 
+		}
+		
+		.statistics li.style3 {
+			background-color: #706ba0;
+		}
+		
+		.statistics li.style4 {
+			background-color: #586f9e; 
+		}
+		
+		.statistics li.style5 {
+			background-color: #4a90a4; 
+		}
+		
 
 			.statistics li strong, .statistics li b {
 				display: block;
