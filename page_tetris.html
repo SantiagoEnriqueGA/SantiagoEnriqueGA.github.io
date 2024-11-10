@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Terminal Tetris Game</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<h1>Terminal Tetris Game</h1>
+                <p>This is a simple terminal-based Tetris game built with the `curses` library in Python. It features classic Tetris gameplay, including rotating and moving blocks, clearing rows, and tracking high scores in a SQLite database (`high_score.db`).</p>
+			</header>
+
+			<!-- Main -->
+			<div id="main">
+				<!-- Content -->
+				<section id="intro" class="main">
+					<div class="spotlight">
+						<div class="content">
+							<header class="major">
+								<h2>Features</h2>
+							</header>
+							<ul>
+								<li><strong>Graphical Display</strong>: Uses `curses` to display blocks, game board, and scores.</li>
+								<li><strong>Block Types</strong>: Standard Tetris blocks (I, J, L, O, S, T, Z) with different colors.</li>
+								<li><strong>Game Controls</strong>: Move, rotate, drop blocks, hold blocks, and pause.</li>
+								<li><strong>Scoring</strong>: Points increase by clearing rows, with higher scores for multiple rows.</li>
+								<li><strong>High Score Storage</strong>: High scores are saved in `high_score.db`.</li>
+							</ul>
+
+							<header class="major">
+								<h2>Classes and Functions</h2>
+							</header>
+							<ul>
+								<li><strong>TetrisBoard</strong>: Manages game board, adds blocks, clears rows, and scores.</li>
+								<li><strong>TetrisBlock</strong>: Represents blocks with specific shapes and colors.</li>
+								<li><strong>Blocks</strong>: Initializes all predefined Tetris blocks.</li>
+								<li><strong>print_board</strong>: Displays the game board and score in the terminal.</li>
+								<li><strong>print_block</strong>: Renders a block at a specified position.</li>
+								<li><strong>print_shadow</strong>: Shows where a block will land.</li>
+								<li><strong>main</strong>: Main game loop function.</li>
+							</ul>
+
+							<header class="major">
+								<h2>Controls</h2>
+							</header>
+							<table>
+								<tr><th>Key</th><th>Action</th></tr>
+								<tr><td>Left Arrow / A</td><td>Move block left</td></tr>
+								<tr><td>Right Arrow / D</td><td>Move block right</td></tr>
+								<tr><td>Down Arrow / S</td><td>Move block down</td></tr>
+								<tr><td>Up Arrow / W</td><td>Rotate block</td></tr>
+								<tr><td>Space</td><td>Hard drop</td></tr>
+								<tr><td>H</td><td>Hold current block</td></tr>
+								<tr><td>P</td><td>Pause game</td></tr>
+							</table>
+
+							<header class="major">
+								<h2>Installation</h2>
+							</header>
+							<p>To play the game, ensure Python and the `windows-curses` library are installed:</p>
+							<pre><code class="language-bash">pip install windows-curses</code></pre>
+
+							<header class="major">
+								<h2>How to Play</h2>
+							</header>
+							<ol>
+								<li>Run the game:
+									<pre><code class="language-bash">python game.py</code></pre>
+								</li>
+								<li>Use arrow keys or WASD to move and rotate blocks.</li>
+								<li>Clear rows to score points and achieve a high score, which will be saved in `high_score.db`.</li>
+							</ol>
+
+							<header class="major">
+								<h2>High Scores</h2>
+							</header>
+							<p>High scores are saved in `high_score.db` and updated each time a new high score is achieved.</p>
+
+                            <header class="major">
+								<h2>Screenshot</h2>
+							</header>
+							<a href="https://raw.githubusercontent.com/SantiagoEnriqueGA/tetris_game/refs/heads/main/game.PNG" target="_blank">
+								<img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/tetris_game/refs/heads/main/game.PNG" alt="Tetris Game Screenshot" style="width:75%">
+							</a>
+
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<section>
+					<h2>Contact Me</h2>
+					<dl class="alt">
+						<dt>Phone</dt>
+							<dd>(832) 296-3193</dd>
+						<dt>Email</dt>
+							<dd><a href="mailto:sega97@gmail.com">sega97@gmail.com</a></dd>
+						<dt>LinkedIn</dt>
+							<dd><a href="https://www.linkedin.com/in/santiago-e-gonzalez/">linkedin.com/in/santiago-e-gonzalez</a></dd>
+						<dt>GitHub</dt>
+							<dd><a href="https://github.com/SantiagoEnriqueGA/">github.com/SantiagoEnriqueGA</a></dd>
+					</dl>
+				</section>
+				<p class="copyright">&copy; Santiago Enrique Gonzalez. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+			</footer>
+		</div>
+
+		<!-- Scripts -->
+		<script>window.onload = function() {document.body.style.zoom = "75%";}</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/autoloader/prism-autoloader.min.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

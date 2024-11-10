@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<!--
+    Stellar by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+    <head>
+        <title>Maze Path Finder</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/themes/prism.min.css" />
+        <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload">
+
+        <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- Header -->
+            <header id="header">
+                <h1>Maze Path Finder</h1>
+                <p>A project implementing pathfinding algorithms in 2D and 3D mazes</p>
+            </header>
+
+            <!-- Main -->
+            <div id="main">
+                <!-- Content -->
+                <section id="intro" class="main">
+                    <div class="spotlight">
+                        <div class="content">
+                            <header class="major">
+                                <h2>Project Overview</h2>
+                            </header>
+                            <p>This project, <strong>maze_path_finder</strong>, implements multiple algorithms for pathfinding. The project includes two implementations: one for pathfinding in 2D on a square grid, and one for pathfinding in 3D on a cubical grid. The 2D visualization is done using the <code>curses</code> library, while the 3D visualization is done using the <code>ursina</code> library.</p>
+
+                            <header class="major">
+                                <h2>Project Structure</h2>
+                            </header>
+                            <ul>
+                                <li><strong>pathfinding/path_finder.py</strong>: Implements 2D pathfinding algorithms and visualization.</li>
+                                <li><strong>pathfinding/maze.csv</strong>: Contains maze data in CSV format.</li>
+                                <li><strong>pathfinding_3d/main.py</strong>: The main script for 3D pathfinding algorithms.</li>
+                                <li><strong>pathfinding_3d/pathfinding.py</strong>: Implements 3D pathfinding methods and cell relationships across cube faces.</li>
+                                <li><strong>requirements.txt</strong>: Lists the required dependencies for the project.</li>
+                            </ul>
+
+                            <header class="major">
+                                <h2>Features</h2>
+                            </header>
+                            <ul>
+                                <li><strong>2D Pathfinding</strong>: Pathfinding algorithms with visualization using <code>curses</code>.</li>
+                                <li><strong>3D Pathfinding</strong>: Pathfinding algorithms with visualization using <code>ursina</code>, offering interactive 3D views with user-controlled cameras.</li>
+                            </ul>
+
+                            <header class="major">
+                                <h2>2D Path Finding Visualized</h2>
+                            </header>
+                            <p>The 2D visualization of the maze and pathfinding process is displayed using the <code>curses</code> library, providing a terminal-based interface.</p>
+
+                            <h3>Example 1</h3>
+                            <a href="https://raw.githubusercontent.com/SantiagoEnriqueGA/maze_path_finder/refs/heads/main/img/maze_type_0.png" target="_blank">
+                                <img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/maze_path_finder/refs/heads/main/img/maze_type_0.png" alt="Maze Type 0" style="width:75%">
+                            </a>
+
+                            <h3>Example 2</h3>
+                            <a href="https://raw.githubusercontent.com/SantiagoEnriqueGA/maze_path_finder/refs/heads/main/img/maze_type_4_r20_c20.png" target="_blank">
+                                <img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/maze_path_finder/refs/heads/main/img/maze_type_4_r20_c20.png" alt="Maze Type 4" style="width:75%">
+                            </a>
+
+                            <header class="major">
+                                <h2>3D Path Finding Visualized</h2>
+                            </header>
+                            <p>The 3D visualization of the maze and pathfinding process is displayed using the <code>ursina</code> library, allowing an interactive user-controlled camera view.</p>
+
+                            <h3>3D Maze Example</h3>
+                            <a href="https://raw.githubusercontent.com/SantiagoEnriqueGA/maze_path_finder/refs/heads/main/img/cube_maze_25.png" target="_blank">
+                                <img src="https://raw.githubusercontent.com/SantiagoEnriqueGA/maze_path_finder/refs/heads/main/img/cube_maze_25.png" alt="3D Maze" style="width:75%">
+                            </a>
+
+                            <header class="major">
+                                <h2>Usage</h2>
+                            </header>
+                            <h3>2D Pathfinding</h3>
+                            <ol>
+                                <li>Ensure Python is installed on your system.</li>
+                                <li>Install the required dependencies:
+                                    <pre><code>pip install -r requirements.txt</code></pre>
+                                    <em>Note: On Windows, install <code>windows-curses</code> for the curses library.</em>
+                                </li>
+                                <li>Run the 2D pathfinder script:
+                                    <pre><code>python pathfinding/path_finder.py</code></pre>
+                                </li>
+                            </ol>
+                            <h4>Command Line Arguments</h4>
+                            <pre><code>path_finder.py [-h] [--rows ROWS] [--cols COLS] [--maze_type MAZE_TYPE]</code></pre>
+                            <ul>
+                                <li><code>-h, --help</code>: Show help message and exit</li>
+                                <li><code>--rows ROWS</code>: Number of rows in the maze</li>
+                                <li><code>--cols COLS</code>: Number of columns in the maze</li>
+                                <li><code>--maze_type MAZE_TYPE</code>: Type of maze to generate. Options: 0 (small), 1 (large), 2 (CSV), 3 (random grid), 4 (random).</li>
+                            </ul>
+
+                            <h3>3D Pathfinding</h3>
+                            <ol>
+                                <li>Ensure Python is installed on your system.</li>
+                                <li>Install the required dependencies:
+                                    <pre><code>pip install -r requirements.txt</code></pre>
+                                </li>
+                                <li>Run the 3D pathfinder script:
+                                    <pre><code>python pathfinding_3d/main.py</code></pre>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <section>
+                    <h2>Contact Me</h2>
+                    <dl class="alt">
+                        <dt>Phone</dt>
+                            <dd>(832) 296-3193</dd>
+                        <dt>Email</dt>
+                            <dd><a href="mailto:sega97@gmail.com">sega97@gmail.com</a></dd>
+                        <dt>LinkedIn</dt>
+                            <dd><a href="https://www.linkedin.com/in/santiago-e-gonzalez/">linkedin.com/in/santiago-e-gonzalez</a></dd>
+                        <dt>GitHub</dt>
+                            <dd><a href="https://github.com/SantiagoEnriqueGA/">github.com/SantiagoEnriqueGA</a></dd>
+                    </dl>
+                </section>
+                <p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+            </footer>
+        </div>
+
+        <!-- Scripts -->
+        <script>window.onload = function() {document.body.style.zoom = "75%";}</script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/prism.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.27.0/plugins/autoloader/prism-autoloader.min.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
