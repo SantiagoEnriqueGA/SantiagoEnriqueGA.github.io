@@ -2729,12 +2729,13 @@ input, select, textarea {
 
 		table td {
 			padding: 0.75em 0.75em;
+			font-size: .9em;
 			text-align: left; /* Align table data to the left */
 		}
 
 		table th {
-			font-size: 0.9em;
-			font-weight: 400;
+			font-size: 1em;
+			font-weight: bold;
 			padding: 0 0.75em 0.75em 0.75em;
 			text-align: left;
 		}
@@ -3233,6 +3234,7 @@ input, select, textarea {
 		border-top-right-radius: 0.25em;
 		cursor: default;
 		text-align: center;
+		font-weight: bold;
 	}
 
 		#nav input, #nav select, #nav textarea {
@@ -3700,18 +3702,32 @@ input, select, textarea {
 		padding: 5em 5em 3em 5em ;
 		width: calc(100% + 2em);
 		margin: 0 0 3em -2em;
+		font-weight: bold;
+		color: #636363;
+		font-size: 1.2em;
 	}
 
 		#footer > * {
-			width: calc(50% - 2em);
+			width: calc(100% - 2em);
 			margin-left: 2em;
 		}
 
 		#footer .copyright {
 			width: 100%;
 			margin: 2.5em 0 2em 0;
-			font-size: 0.8em;
+			font-size: 0.5em;
 			text-align: center;
+		}
+
+		#footer h2 {
+			font-size: 1.5em;
+			font-weight: bold;
+			color: #ffffff;
+		}
+
+		#footer dd {
+			font-size: 1em;
+			color: #ffffff;
 		}
 
 		@media screen and (max-width: 1280px) {
